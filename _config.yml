@@ -1,0 +1,59 @@
+# Site Settings
+baseurl: ""
+url : ""
+
+# Blog Settings
+theme_settings :
+  title : Tosterius
+  favicon : assets/mashik_pic.ico
+
+  # Profile Settings
+  profile :
+    image : assets/img/smile.png
+    username : Arthur Yalaletdinov
+    description : Software engineer
+    experience :
+      - start : 2017-09
+        end : 2019-06
+        experience : SpritDSP
+      - start : 2017-09
+        end : 2016-04
+        experience : Aifil LCC
+      - start : 2014-04
+        end : 2015-07
+        experience : Institute for System Programming of the Russian Academy of Sciences
+    skills : 
+      - skill : Motivation
+        value : 100  # Percent value
+      - skill : C++
+        value : 85  # Percent value
+      - skill : Python
+        value : 75  # Percent value
+        
+  # Icons
+  icons :
+    email:  arthur.yal@yandex.ru
+    linkedin: https://www.linkedin.com/in/arthur-yalaletdinov-0aaa1068/
+    github: tosterius
+    gitlab: 
+    bitbucket: 
+    google_plus:
+    twitter:
+    youtube:
+    facebook:
+    instagram:
+
+  # Disqus
+  disqus_shortname :
+
+# Pagination
+paginate: 5
+paginate_path: "blog/page:num"
+
+# Build Ssttings
+sass:
+  sass_dir: _sass
+  style: :compressed
+gems: [jekyll-paginate]
+bootstrap:
+  assets: true
