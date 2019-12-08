@@ -2,7 +2,7 @@
 layout: post
 title: Sample Post with Grape-Theme style
 subtitle : How markdown is displayed as html
-tags: [HTML, Markdown]
+tags: [Markdown]
 author: Nayeong Kim
 comments : False
 ---
