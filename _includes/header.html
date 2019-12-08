@@ -10,6 +10,21 @@
         <li class="btn-nav">Blog</li>
       </a>
       <li class="current">Tags</li>
+      <a href="{{ site.url }}/notes">
+        <li class="btn-nav">Notes</li>
+      </a>
+      <a href="{{ site.url }}/portfolio">
+        <li class="btn-nav">Portfolio</li>
+      </a>
+      {% when 'notes'%}
+      <!-- notes -->
+      <a href="{{ site.url }}">
+        <li class="btn-nav">Blog</li>
+      </a>
+      <a href="{{ site.url }}/tags">
+        <li class="btn-nav">Tags</li>
+      </a>
+      <li class="current">Notes</li>
       <a href="{{ site.url }}/portfolio">
         <li class="btn-nav">Portfolio</li>
       </a>
@@ -21,6 +36,9 @@
       <a href="{{ site.url }}/tags">
         <li class="btn-nav">Tags</li>
       </a>
+      <a href="{{ site.url }}/notes">
+        <li class="btn-nav">Notes</li>
+      </a>
       <li class="current">Portfolio</li>
       {% else %}
       <!-- others -->
@@ -29,6 +47,9 @@
       </a>
       <a href="{{ site.url }}/tags">
         <li class="btn-nav">Tags</li>
+      </a>
+      <a href="{{ site.url }}/notes">
+        <li class="btn-nav">Notes</li>
       </a>
       <a href="{{ site.url }}/portfolio">
         <li class="btn-nav">Portfolio</li>

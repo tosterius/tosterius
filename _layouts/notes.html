@@ -1,0 +1,39 @@
+---
+layout: page
+---
+<div id="notes">
+  <section class="bg"></section>
+  <h1 class="title">{{ page.title }}</h1>
+  
+  <ul class="note-cloud">
+        {% assign categories = site.notes | group_by: "category" | sort: "title" %}
+        {% for category in categories %}
+        <a href="#{{ category.name | first | slugize }}">
+          <li class="tag"
+            style="background-color: rgba(86,61,124, 1)">
+            {{ category.name  }}
+            <span class="meta">{{ category.size }}</span>
+          </li>
+        </a>
+        {% endfor %}
+      </ul>
+  <div class="note-groups">
+    {% assign categories = site.notes | group_by: "category" | sort: "title" %}
+    {% for category in categories %}
+    <div class="note-group">
+    <h4 id="{{ category.name | cgi_escape }}" class="title">{{ category.name | cgi_escape }}</h4>
+      <div class="items">
+        {% for post in category.items  %}
+        <a href="{{ post.url | relative_url }}" class="post-link">
+          <div class="item">
+            <!-- <p class="meta">{{ post.date  | date: "%B %-d, %Y" }}</p> -->
+            <p class="title">{{ post.title }}</p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>

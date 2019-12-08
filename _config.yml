@@ -57,3 +57,7 @@ sass:
 gems: [jekyll-paginate]
 bootstrap:
   assets: true
+
+collections:
+  notes:
+    output: true
