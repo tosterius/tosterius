@@ -18,6 +18,39 @@ layout: page
   <i class="fas fa-chevron-up"></i>
 </div>
 
+<!-- Navigation -->
+{% capture the_collection %}{{ page.collection }}{% endcapture %}
+
+{% if page.collection %}
+  {% assign document = site[the_collection] %}
+{% endif %}
+
+{% for links in document %}
+  {% if links.title == page.title %}
+    {% unless forloop.first %}
+      {% assign prevurl = prev.url %}
+      {% assign prevtitle = prev.title %}
+    {% endunless %}
+    {% unless forloop.last %}
+      {% assign next = document[forloop.index] %}
+      {% assign nexttitle = next.title %}
+      {% assign nexturl = next.url %}
+    {% endunless %}
+  {% endif %}
+  {% assign prev = links %}
+{% endfor %}
+
+
+<div class="PageNavigation">
+  {% if prevurl %}
+    <a class="prev" href="{{prevurl}}">&laquo; {{prevtitle}}</a>
+  {% endif %}
+  {% if nexturl %}
+    <a class="next" href="{{nexturl}}">{{nexttitle}} &raquo;</a>
+  {% endif %}
+</div>
+
+
 <!-- Disqus -->
 {% if site.theme_settings.disqus_shortname %}
 <div id="comments">
