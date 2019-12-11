@@ -72,13 +72,24 @@
     overflow: hidden;
   }
   
-  .PageNavigation a {
-    display: block;
-    width: 50%;
-    float: left;
-    margin: 1em 0;
+  .PageNavigation .prev {
+      float: left;
+      left: 30px;
   }
-  
   .PageNavigation .next {
-    text-align: right;
+      float: right;
+      right: 30px;
+  }
+  .PageNavigation a {
+    display: inline-block; 
+
+    margin: 1em 0;
+    background-color: #563d7c;
+    color: #fff;
+    border-radius: 15px;
+    padding: 8px 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    max-width: 200px;
   }
