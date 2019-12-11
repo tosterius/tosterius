@@ -1,8 +1,22 @@
 {% assign _url = page.url | split: "/" %}
 {% assign current = _url[-1] | split: "." %}
+{% assign prev = _url[-2] | split: "." %}
 <header>
   <nav>
     <ul>
+      {% if prev[0] == "notes" %}
+      <!-- note -->
+      <a href="{{ site.url }}">
+          <li class="btn-nav">Blog</li>
+        </a>
+        <a href="{{ site.url }}/tags">
+          <li class="btn-nav">Tags</li>
+        </a>
+        <li class="current">Notes</li>
+        <a href="{{ site.url }}/portfolio">
+          <li class="btn-nav">Portfolio</li>
+        </a>
+      {% else %}
       {% case current[0] %}
       {% when 'tags'%}
       <!-- tags -->
@@ -55,6 +69,7 @@
         <li class="btn-nav">Portfolio</li>
       </a>
       {% endcase %}
+      {% endif %}
     </ul>
   </nav>
 </header>
