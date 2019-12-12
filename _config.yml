@@ -5,7 +5,7 @@ url : ""
 # Blog Settings
 theme_settings :
   title : Tosterius
-  favicon : assets/mashik_pic.ico
+  favicon : assets/favicon.png
 
   # Profile Settings
   profile :
