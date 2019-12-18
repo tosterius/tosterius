@@ -13,8 +13,8 @@
           <li class="btn-nav">Tags</li>
         </a>
         <li class="current">Notes</li>
-        <a href="{{ site.url }}/portfolio">
-          <li class="btn-nav">Portfolio</li>
+        <a href="{{ site.url }}/about">
+          <li class="btn-nav">About</li>
         </a>
       {% else %}
       {% case current[0] %}
@@ -27,8 +27,8 @@
       <a href="{{ site.url }}/notes">
         <li class="btn-nav">Notes</li>
       </a>
-      <a href="{{ site.url }}/portfolio">
-        <li class="btn-nav">Portfolio</li>
+      <a href="{{ site.url }}/about">
+        <li class="btn-nav">About</li>
       </a>
       {% when 'notes'%}
       <!-- notes -->
@@ -39,11 +39,11 @@
         <li class="btn-nav">Tags</li>
       </a>
       <li class="current">Notes</li>
-      <a href="{{ site.url }}/portfolio">
-        <li class="btn-nav">Portfolio</li>
+      <a href="{{ site.url }}/about">
+        <li class="btn-nav">About</li>
       </a>
-      <!-- portfolio -->
-      {% when 'portfolio'%}
+      <!-- about -->
+      {% when 'about'%}
       <a href="{{ site.url }}">
         <li class="btn-nav">Blog</li>
       </a>
@@ -53,7 +53,7 @@
       <a href="{{ site.url }}/notes">
         <li class="btn-nav">Notes</li>
       </a>
-      <li class="current">Portfolio</li>
+      <li class="current">About</li>
       {% else %}
       <!-- others -->
       <a href="{{ site.url }}">
@@ -65,8 +65,8 @@
       <a href="{{ site.url }}/notes">
         <li class="btn-nav">Notes</li>
       </a>
-      <a href="{{ site.url }}/portfolio">
-        <li class="btn-nav">Portfolio</li>
+      <a href="{{ site.url }}/about">
+        <li class="btn-nav">About</li>
       </a>
       {% endcase %}
       {% endif %}
