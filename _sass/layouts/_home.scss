@@ -80,6 +80,22 @@
                             color: #fff;
                         }
                     }
+                    .note-wrap{
+                        display : inline-block;
+                        .note-sm {
+                            display: inline-block;
+                            background-color: rgba(0,0,0,0.07);
+                            margin-right: 3px;
+                            padding: 2px 9px;
+                            border-radius: 15px;
+                            color: $text-gray;
+                            font-size: 0.75rem;
+                        }
+                        .note-sm:hover {
+                            background-color: $theme-color-cat-note;
+                            color: #fff;
+                        }
+                    }
                 }
                 .img-wrap {
                     img {

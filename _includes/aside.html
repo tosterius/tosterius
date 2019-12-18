@@ -25,20 +25,15 @@
   </a>
   {% endfor %}
 </div>
-<!-- Project -->
-<!-- <div id="proj-wrap">
-  <a href="{{ site.url }}/portfolio#projects">
-    <p class="title">PROJECTS 🙋🏻 </p>
-    <hr class="proj-hr">
-    {% for _ in site.data.projects %}
-    {% assign project = _.project %}
-    {% if project.print %}
-    <div class="proj-content">
-      <div class="proj-title">{{ project.title }}</div>
-      <div class="meta">{{ project.date }}</div>
-    </div>
-    <hr class="proj-hr">
-    {% endif %}
-    {% endfor %}
+
+{% assign categories = site.notes | group_by: "category" | sort: "title" %}
+<div id="note-wrap">
+  <a href="{{ site.url }}/notes">
+    <p class="title">Notes on</p>
   </a>
-</div> -->
+  {% for category in categories %}
+  <a href="{{site.baseurl}}/notes#{{ category.name | first | cgi_encode }}">
+    <span class="note-category">{{ category.name }}</span>
+  </a>
+  {% endfor %}
+</div>

@@ -8,10 +8,10 @@ layout: page
   <ul class="note-cloud">
         {% assign categories = site.notes | group_by: "category" | sort: "title" %}
         {% for category in categories %}
-        <a href="#{{ category.name | first | slugize }}">
-          <li class="tag"
-            style="background-color: rgba(86,61,124,{{ category.size | times: 100 | divided_by: categories.size | plus: 50 | divided_by: 100.0}})">
-            {{ category.name  }}
+        <a href="#{{ category.name }}">
+          <li class="note-category"
+            style="background-color: rgba(48,128,104,{{ category.size | times: 100 | divided_by: categories.size | plus: 50 | divided_by: 100.0}})">
+            {{ category.name }}
             <span class="meta">{{ category.size }}</span>
           </li>
         </a>
