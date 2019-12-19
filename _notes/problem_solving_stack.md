@@ -1,9 +1,8 @@
 ---
 layout: note # You can ommit this if you've set it as a default
-title: BMW
-category: Cars
-headline: Zebras are the best!
-picture: /images/animails/zebra.jpg
+title: "Problem solving approach: stack and queue"
+category: 'Algorithms'
+headline: 
 ---
 
 This post show result from awesome Markdown techniques like jekyll. 

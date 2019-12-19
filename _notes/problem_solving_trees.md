@@ -1,10 +1,8 @@
 ---
 layout: note # You can ommit this if you've set it as a default
-title: Tiger
-category: Animals
-family: Equidae
-headline: Zebras are the best!
-picture: /images/animails/zebra.jpg
+title: "Problem solving approach: binary trees"
+category: 'Algorithms'
+headline: 
 ---
 
 This post show result from awesome Markdown techniques like jekyll. 

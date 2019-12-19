@@ -28,13 +28,12 @@ you can easy to change style in `_utility.html` and a sample of the formatting f
 <br>
 
 <h2>1. HTML headings</h2>
-{% highlight html %}
-<h1>This is heading 1</h1>
-<h2>This is heading 2</h2>
-<h3>This is heading 3</h3>
-<h4>This is heading 4</h4>
-<h5>This is heading 5</h5>
-<h6>This is heading 6</h6>
+{% highlight cpp %}
+int i = 3;
+for (auto s = 2; s < 5; s++)
+{
+    std::cerr << s;
+}
 {% endhighlight %}
 <h1>This is heading 1</h1>
 <h2>This is heading 2</h2>
