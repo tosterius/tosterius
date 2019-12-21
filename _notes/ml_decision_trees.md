@@ -2,6 +2,7 @@
 layout: note # You can ommit this if you've set it as a default
 title: Decision Trees
 category: ML
+index: 3
 headline:
 picture:
 ---

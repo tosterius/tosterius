@@ -23,7 +23,8 @@ layout: page
     <div class="note-group">
     <h4 id="{{ category.name | cgi_escape }}" class="title">{{ category.name | cgi_escape }}</h4>
       <div class="items">
-        {% for note in category.items  %}
+        {% assign sorted_notes = category.items | sort: "index" %}
+        {% for note in sorted_notes  %}
         <a href="{{ note.url | relative_url }}" class="note-link">
           <div class="item">
             <!-- <p class="meta">{{ note.date  | date: "%B %-d, %Y" }}</p> -->
