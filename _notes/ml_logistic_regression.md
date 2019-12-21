@@ -1,9 +1,9 @@
 ---
 layout: note # You can ommit this if you've set it as a default
-title: Cat
-category: Animals
-headline: Zebras are the best!
-picture: /images/animails/zebra.jpg
+title: Logistic Regression
+category: ML
+headline: 
+picture:
 ---
 
 This post show result from awesome Markdown techniques like jekyll. 

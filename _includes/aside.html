@@ -32,7 +32,7 @@
     <p class="title">Notes on</p>
   </a>
   {% for category in categories %}
-  <a href="{{site.baseurl}}/notes#{{ category.name | first | cgi_encode }}">
+  <a href="{{site.baseurl}}/notes#{{ category.name | cgi_encode }}">
     <span class="note-category">{{ category.name }}</span>
   </a>
   {% endfor %}

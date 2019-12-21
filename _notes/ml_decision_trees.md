@@ -1,9 +1,9 @@
 ---
 layout: note # You can ommit this if you've set it as a default
-title: Opel
-category: Cars
-headline: Zebras are the best!
-picture: /images/animails/zebra.jpg
+title: Decision Trees
+category: ML
+headline:
+picture:
 ---
 
 This post show result from awesome Markdown techniques like jekyll. 
