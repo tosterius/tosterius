@@ -1,5 +1,5 @@
 ---
-layout: note # You can ommit this if you've set it as a default
+layout: note
 title: Decision Trees
 category: ML
 index: 3
@@ -7,99 +7,70 @@ headline:
 picture:
 ---
 
-This post show result from awesome Markdown techniques like jekyll. 
-`Jekyll` supports to transform your $$mean = \frac{\displaystyle\sum_{i=1}^{n} x_{i}}{n}$$ plain text into static websites and blogs. 
+There are two types of decision trees:
 
+- **Classification tree** solves classification problems. Predicted outcome is the category of the object it belongs to
+- **Regression tree** solves regression problems. Predicted outcome is real number
+
+#### Decision tree building
+Decicion tree algorithms transforms raw data to rule based decision tree.
+The decision of making data splits heavily affects a tree's accuracy. There are several algorithms to decide how to split a node in
+two or more subnodes. Sptitting criteria is different for classification and regression trees.
+
+#### ID3 (based on Entropy and Information Gain)
+**Shannon's entropy** is defined as:
 \\[
-\begin{split}
-r &= \begin{pmatrix} R & 0 \\\\ 0 & 1 \end{pmatrix} \\\\\\\\
-t &= \begin{pmatrix} I & T \\\\ 0 & 1 \end{pmatrix}
-\end{split}
+\begin{equation}
+S = -\sum_{i}^C p_i log_2(p_i),
+\end{equation}
+\\]
+where $$C$$ is the number of classes, $$p_i$$ is the probability to pick an element of class $$i$$.
+It can be interpreted as measure of uncertainty or randomness in data.
+
+**Information gain** is the reduction in entopy of the system :
+\\[
+\begin{equation}
+G = S_0 - \sum_{g=1}^{g=Groups} \frac{N_g}{N}S_g
+\end{equation}
 \\]
 
-you can easy to change style in `_utility.html` and a sample of the formatting follows.
+For example, consider a coin toss: the probability to get a head is 0.5 and it is equal to the probability to get a tail.
+It means the uncertainty takes its maximum value 1, since there is no chance to precisely determine the outcome.
 
-<br>
+Another toy example. Circles color in dependence on their coordinates:
+![decision_tree_0]({{ site.baseurl }}/assets/img/notes/decision_tree_explanation_0.png)
+There are 17 circles: 9 red and 8 green.
+The entropy of inital state is equal to
 
-이 포스팅은 놀라운 Markdown 기술들로 만들어진 결과물입니다.
+\\[
+\begin{equation}
+S_0 = - \frac{9}{17}log_2\frac{9}{17} - \frac{8}{17}log_2\frac{8}{17} = 0.9975025463691153
+\end{equation}
+\\]
 
-`_utility.html`에서 스타일을 변경할 수 있으며, 서식 샘플은 아래와 같습니다.
+Let us split our circles into two groups as folows:
+![decision_tree_1]({{ site.baseurl }}/assets/img/notes/decision_tree_explanation_1.png)
+The entropy of these two groups:
+\\[
+\begin{equation}
+S_l = - \frac{3}{10}log_2\frac{3}{10} - \frac{7}{10}log_2\frac{7}{10} = 0.8812908992306927
+\end{equation}
+\\]
+\\[
+\begin{equation}
+S_r = - \frac{6}{7}log_2\frac{6}{7} - \frac{1}{7}log_2\frac{1}{7} = 0.5916727785823275
+\end{equation}
+\\]
+The entropy value has decreased in both groups. It means our strategy of splitting results in
+two more ordered groups.
+Information gain:
+\\[
+\begin{equation}
+G = S_0- \frac{10}{17}S_l - \frac{7}{17}S_r = 0.23546616740539644.
+\end{equation}
+\\]
+We can continue to split the dataset into groups in the way in which we are until
+the circles in each group are all of the same color.
 
-<br>
-
-<h2>1. HTML headings</h2>
-{% highlight html %}
-<h1>This is heading 1</h1>
-<h2>This is heading 2</h2>
-<h3>This is heading 3</h3>
-<h4>This is heading 4</h4>
-<h5>This is heading 5</h5>
-<h6>This is heading 6</h6>
-{% endhighlight %}
-<h1>This is heading 1</h1>
-<h2>This is heading 2</h2>
-<h3>This is heading 3</h3>
-<h4>This is heading 4</h4>
-<h5>This is heading 5</h5>
-<h6>This is heading 6</h6>
-
-<br>
-
-<h2>2. bold text</h2>
-{% highlight html %}
-<p>This is normal text - <b>and this is bold text</b>.</p>
-{% endhighlight %}
-<p>This is normal text - <b>and this is bold text</b>.</p>
-
-<br>
-
-<h2>3. list</h2>
-<h3>a. unordered list</h3>
-{% highlight html %}
-- Coffee
-- Tea
-- Milk
-{% endhighlight %}
-- Coffee
-- Tea
-- Milk
-
-<h3>b. ordered list</h3>
-{% highlight html %}
-1. Coffee
-2. Tea
-3. Milk
-{% endhighlight %}
-1. Coffee
-2. Tea
-3. Milk
-
-<br>
-
-<h2>4. hyperlink</h2>
-{% highlight html %}
-[naye0ng's blog](https://naye0ng.github.io)
-{% endhighlight %}
-[naye0ng's blog](https://naye0ng.github.io)
-
-<br>
-
-<h2>5. image</h2>
-{% highlight html %}
-![sample image]({{ site.baseurl }}/assets/img/koreaSunset.jpg)
-{% endhighlight %}
-![sample image]({{ site.baseurl }}/assets/img/koreaSunset.jpg)
-
-<br>
-
-<h2>5. table</h2>
-{% highlight html %}
-| Header 1  | Header 2 | Header 3 |
-| :------- | :-------: | -------: |
-| Content 1  | Content 2 | Content 3 |
-| Content 1  | Content 2 | Content 3 |
-{% endhighlight %}
-| Header 1  | Header 2 | Header 3 |
-| :------- | :-------: | -------: |
-| Content 1 | Content 2 | Content 3 |
-| Content 1 | Content 2 | Content 3 |
+Usially we deal with multicategorial data represented as table(s). In each step ID3 algorithm
+choses the attribute with the largest information gain as the decision node.
