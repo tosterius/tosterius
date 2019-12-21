@@ -1,6 +1,6 @@
 *{
 	-webkit-text-size-adjust:none;
-	font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+	font-family: 'Montserrat', 'Roboto', 'Sans-serif';
 	box-sizing: border-box;
 }
 html, body{height:100%;}
@@ -28,7 +28,6 @@ time, mark, audio, video {
 	border: 0;
 	vertical-align: baseline;
 	word-break: keep-all;
-	font-size: 1.05rem;
     line-height: 1.5em;
 }
 /* HTML5 display-role reset for older browsers */
@@ -87,12 +86,7 @@ p{
 		font-size : 0.9rem;
 	}
 }
-ol, ul {
-	li { font-size: 15px; }
-}
-em {
-	font-size: 15px;
-}
+
 a:link, a:visited, a:active, a:hover {
 	text-decoration: none; 
 	color: $text;
