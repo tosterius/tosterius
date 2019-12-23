@@ -20,3 +20,32 @@
         margin-bottom: 100px;
     }
 }
+
+
+.NotePageNavigation {
+    font-size: 14px;
+    display: block;
+    width: auto;
+    overflow: hidden;
+  }
+  
+  .NotePageNavigation .prev {
+      float: left;
+      left: 30px;
+  }
+  .NotePageNavigation .next {
+      float: right;
+      right: 30px;
+  }
+  .NotePageNavigation a {
+    display: inline-block; 
+    margin: 1em 0;
+    background-color: $theme-dark-cat-note;
+    color: #fff;
+    border-radius: 15px;
+    padding: 8px 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    max-width: 300px;
+  }

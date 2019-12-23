@@ -65,31 +65,31 @@
     }
 }
 
-.PageNavigation {
+
+.PostPageNavigation {
     font-size: 14px;
     display: block;
     width: auto;
     overflow: hidden;
   }
   
-  .PageNavigation .prev {
+  .PostPageNavigation .prev {
       float: left;
       left: 30px;
   }
-  .PageNavigation .next {
+  .PostPageNavigation .next {
       float: right;
       right: 30px;
   }
-  .PageNavigation a {
+  .PostPageNavigation a {
     display: inline-block; 
-
     margin: 1em 0;
-    background-color: #563d7c;
+    background-color: $theme-dark;
     color: #fff;
     border-radius: 15px;
     padding: 8px 16px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: clip;
-    max-width: 200px;
+    max-width: 300px;
   }
