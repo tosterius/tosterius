@@ -1,15 +1,15 @@
 ---
 layout: note
-title: "Statistics fundamentals: Probability distributions"
-category: Statistics
+title: "Refresher notes: Probability distributions"
+category: "Statistics"
 index: 7
 headline:
 picture:
 ---
 
-### Combinatorics remainder
+### Combinatorics reminder
 
-#### Permutations
+##### Permutations
 Permutations are all the possible ways elements in a set can be arranged, where the order
 is important.
 The number of permutations of subsets of size $$k$$ drawn from a set of size $$n$$ is given by
@@ -17,111 +17,117 @@ The number of permutations of subsets of size $$k$$ drawn from a set of size $$n
     A_k^n = nPk = \frac{n!}{(n-k)!}
 \\]
 
-#### Combinations
+##### Combinations
 The number of combinations of subsets of size $$k$$ drawn from a set of size $$n$$ is given by:
 \\[
     C_k^n = nCk = \binom{n}{k} = \frac{n!}{k!(n-k)!}
 \\]
 
-#### Binominal distribution
+<br>
+#### 1. Bernoulli Distribution
+The Bernoulli distribution is the discrete probability distribution of a random variable which takes a binary output:
+ $$1$$ with probability $$p$$, and $$0$$ with probability $$(1-p)$$. 
 
-- $$n$$ independent experiments, or trials, are performed
-- each experiment results in a “success” with probability $$p$$ and a
-“failure” with probability $$1 − p$$. 
-- the total number of successes, $$k$$, is a binomial random variable with parameters $$n$$ and $$p$$
 \\[
 \begin{equation}
-p(k) = C_n^k p^k (1-p)^k
+p(x) = p^x (1-p)^x, where\; x = \\{0, 1\\}
+\end{equation}
+\\]
+\\[
+\begin{equation}
+E(x) = p, \; V(x) = p(1 - p)
 \end{equation}
 \\]
 
-#### Poisson distribution
+Example: flipping a coin one time.
+
+<br>
+#### 2. Binomial distribution
+
+- $$n$$ independent experiments are performed
+- each experiment results in $$1$$ with probability $$p$$ and $$0$$ with probability $$1 − p$$. 
+- the total number of successes, $$k$$, is a binomial random variable with parameters $$n$$ and $$p$$
+\\[
+\begin{equation}
+p(k) = C_k^n p^k (1-p)^{n-k}
+\end{equation}
+\\]
+\\[
+\begin{equation}
+E(x) = np, \; V(x) = np(1 - p)
+\end{equation}
+\\]
+
+Example: flipping a coin $$n$$ times. What is the probability of getting $$k$$ heads?
+
+<br>
+#### 3. Poisson distribution and Poisson process
 
 The Poisson distribution can be derived as the limit of a binomial distribution as
 the number of trials, $$n$$, approaches infinity and the probability of success on each trial,
 $$p$$, approaches zero in such a way that $$np = \lambda$$.
 
-<br>
+\\[
+\begin{equation}
+p(k) = -\frac{\lambda^k}{k!}e^{\lambda}
+\end{equation}
+\\]
+\\[
+\begin{equation}
+E(k) = \lambda, \; V(x) = \lambda
+\end{equation}
+\\]
 
-이 포스팅은 놀라운 Markdown 기술들로 만들어진 결과물입니다.
+A Poisson Process is a model for a series of discrete event where the average time between events is known,
+but the exact timing of events is random. The arrival of an event is independent of the event before.
+(Poisson random variable also applies to disjoint regions of space.)
 
-`_utility.html`에서 스타일을 변경할 수 있으며, 서식 샘플은 아래와 같습니다.
+We observe $$k$$ events in a time period given the length of the period and the average events per time
+$$\lambda$$ is an expacted number of events in interval (or region of space):
 
-<br>
+\\[
+\begin{equation}
+p(k_{events\\_in\\_interval}) = -\frac{\lambda^k}{k!}e^{\lambda}
+\end{equation}
+\\]
+\\[
+\begin{equation}
+\lambda = \frac{events}{time}interval
+\end{equation}
+\\]
 
-<h2>1. HTML headings</h2>
-{% highlight html %}
-<h1>This is heading 1</h1>
-<h2>This is heading 2</h2>
-<h3>This is heading 3</h3>
-<h4>This is heading 4</h4>
-<h5>This is heading 5</h5>
-<h6>This is heading 6</h6>
-{% endhighlight %}
-<h1>This is heading 1</h1>
-<h2>This is heading 2</h2>
-<h3>This is heading 3</h3>
-<h4>This is heading 4</h4>
-<h5>This is heading 5</h5>
-<h6>This is heading 6</h6>
+Examples:
 
-<br>
-
-<h2>2. bold text</h2>
-{% highlight html %}
-<p>This is normal text - <b>and this is bold text</b>.</p>
-{% endhighlight %}
-<p>This is normal text - <b>and this is bold text</b>.</p>
-
-<br>
-
-<h2>3. list</h2>
-<h3>a. unordered list</h3>
-{% highlight html %}
-- Coffee
-- Tea
-- Milk
-{% endhighlight %}
-- Coffee
-- Tea
-- Milk
-
-<h3>b. ordered list</h3>
-{% highlight html %}
-1. Coffee
-2. Tea
-3. Milk
-{% endhighlight %}
-1. Coffee
-2. Tea
-3. Milk
+- the requests for individual documents on a web server
+- failure of a machine in one month
+- number of typing errors on a page
 
 <br>
+#### 4. Gaussian distribution
 
-<h2>4. hyperlink</h2>
-{% highlight html %}
-[naye0ng's blog](https://naye0ng.github.io)
-{% endhighlight %}
-[naye0ng's blog](https://naye0ng.github.io)
+Probability density function:
+
+\\[
+\begin{equation}
+f(x) = \frac{1} {\sigma\sqrt{2\pi}} e^{-(x - \mu)^{2}/(2\sigma^{2}) }
+\end{equation}
+\\]
+
+\\[
+\begin{equation}
+E(x) = \mu, \; V(x) = \sigma
+\end{equation}
+\\]
+The notation $$N(\mu, \sigma^2)$$ means normally distributed with mean $$\mu$$ and variance $$\sigma$$.
+
+
+- Many classical statistical tests are based on the assumption that the data follow a normal distribution. This assumption should be tested before applying these tests.
+- In modeling applications, such as linear and non-linear regression, the error term is often assumed to follow a normal distribution with fixed location and scale.
+- The normal distribution is used to find significance levels in many hypothesis tests and confidence intervals. 
+
 
 <br>
-
-<h2>5. image</h2>
-{% highlight html %}
-![sample image]({{ site.baseurl }}/assets/img/koreaSunset.jpg)
-{% endhighlight %}
-![sample image]({{ site.baseurl }}/assets/img/koreaSunset.jpg)
-
-<br>
-
-<h2>5. table</h2>
-{% highlight html %}
-| Header 1  | Header 2 | Header 3 |
-| :------- | :-------: | -------: |
-| Content 1  | Content 2 | Content 3 |
-| Content 1  | Content 2 | Content 3 |
-{% endhighlight %}
-| Header 1  | Header 2 | Header 3 |
-| :------- | :-------: | -------: |
-| Content 1 | Content 2 | Content 3 |
-| Content 1 | Content 2 | Content 3 |
+#### Links
+- [The Poisson Distribution and Poisson Process Explained](https://towardsdatascience.com/the-poisson-distribution-and-poisson-process-explained-4e2cb17d459)
+- [Wiki. Poisson Distribution](https://en.wikipedia.org/wiki/Poisson_distribution)
+- [Normal Distribution](https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm)
