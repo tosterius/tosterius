@@ -1,22 +1,51 @@
 ---
-layout: note # You can ommit this if you've set it as a default
-title: "Problem solving approach: binary trees"
-category: 'Algorithms'
-index: 0
-headline: 
+layout: note
+title: "Statistics fundamentals: Probability distributions"
+category: Statistics
+index: 7
+headline:
+picture:
 ---
 
-This post show result from awesome Markdown techniques like jekyll. 
-`Jekyll` supports to transform your $$mean = \frac{\displaystyle\sum_{i=1}^{n} x_{i}}{n}$$ plain text into static websites and blogs. 
+### Combinatorics remainder
 
+#### Permutations
+Permutations are all the possible ways elements in a set can be arranged, where the order
+is important.
+The number of permutations of subsets of size $$k$$ drawn from a set of size $$n$$ is given by
 \\[
-\begin{split}
-r &= \begin{pmatrix} R & 0 \\\\ 0 & 1 \end{pmatrix} \\\\\\\\
-t &= \begin{pmatrix} I & T \\\\ 0 & 1 \end{pmatrix}
-\end{split}
+    A_k^n = nPk = \frac{n!}{(n-k)!}
 \\]
 
-you can easy to change style in `_utility.html` and a sample of the formatting follows.
+#### Combinations
+The number of combinations of subsets of size $$k$$ drawn from a set of size $$n$$ is given by:
+\\[
+    C_k^n = nCk = \binom{n}{k} = \frac{n!}{k!(n-k)!}
+\\]
+
+#### Binominal distribution
+
+- $$n$$ independent experiments, or trials, are performed
+- each experiment results in a “success” with probability $$p$$ and a
+“failure” with probability $$1 − p$$. 
+- the total number of successes, $$k$$, is a binomial random variable with parameters $$n$$ and $$p$$
+\\[
+\begin{equation}
+p(k) = C_n^k p^k (1-p)^k
+\end{equation}
+\\]
+
+#### Poisson distribution
+
+The Poisson distribution can be derived as the limit of a binomial distribution as
+the number of trials, $$n$$, approaches infinity and the probability of success on each trial,
+$$p$$, approaches zero in such a way that $$np = \lambda$$.
+
+<br>
+
+이 포스팅은 놀라운 Markdown 기술들로 만들어진 결과물입니다.
+
+`_utility.html`에서 스타일을 변경할 수 있으며, 서식 샘플은 아래와 같습니다.
 
 <br>
 
