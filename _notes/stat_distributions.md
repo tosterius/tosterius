@@ -7,23 +7,6 @@ headline:
 picture:
 ---
 
-### Combinatorics reminder
-
-##### Permutations
-Permutations are all the possible ways elements in a set can be arranged, where the order
-is important.
-The number of permutations of subsets of size $$k$$ drawn from a set of size $$n$$ is given by
-\\[
-    A_k^n = nPk = \frac{n!}{(n-k)!}
-\\]
-
-##### Combinations
-The number of combinations of subsets of size $$k$$ drawn from a set of size $$n$$ is given by:
-\\[
-    C_k^n = nCk = \binom{n}{k} = \frac{n!}{k!(n-k)!}
-\\]
-
-<br>
 #### 1. Bernoulli Distribution
 The Bernoulli distribution is the discrete probability distribution of a random variable which takes a binary output:
  $$1$$ with probability $$p$$, and $$0$$ with probability $$(1-p)$$. 
