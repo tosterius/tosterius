@@ -13,13 +13,14 @@ Permutations are all the possible ways elements in a set can be arranged, where 
 is important.
 The number of permutations of subsets of size $$k$$ drawn from a set of size $$n$$ is given by
 \\[
-    A_k^n = nPk = \frac{n!}{(n-k)!}
+    A^k_n = nPk = \frac{n!}{(n-k)!}
 \\]
 
 ##### Combinations
+Combinations are all the possible ways to select items from a collection, such that (unlike permutations) the order of selection does not matter.
 The number of combinations of subsets of size $$k$$ drawn from a set of size $$n$$ is given by:
 \\[
-    C_k^n = nCk = \binom{n}{k} = \frac{n!}{k!(n-k)!}
+    C^k_n = nCk = \binom{n}{k} = \frac{n!}{k!(n-k)!}
 \\]
 
 
@@ -28,7 +29,7 @@ The number of combinations of subsets of size $$k$$ drawn from a set of size $$n
 If $$X$$ is discrete random variable:
 \\[
 \begin{equation}
-E(X) = \sum_{x} x \, p_X(x)
+E(X) = \sum_{x}^{\infty} x \, p_X(x)
 \end{equation}
 \\]
 If $$X$$ is continuous random variable:
