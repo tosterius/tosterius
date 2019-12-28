@@ -91,7 +91,8 @@ r_{xy}= \frac{\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
 \\]
 
 
-#### 4. The law of large numbers
+#### 4. Limit theorems
+##### The law of large numbers
 As the number of identicaly ditributed, randomly generated numbers increases, their sample mean approaches their theoretical mean.
 
 > Theorem.
@@ -104,6 +105,21 @@ P(|\overline{X_n} - \mu| > \epsilon) \rightarrow 0, \; as \; n \rightarrow \inft
 \end{equation}
 \\]
 
+##### The Central Limit Theorem (CLT)
+ It states that, under certain conditions, the sum of a large number of random variables is approximately normal.
+ Or in terms of population: if you have a population with mean $$\mu$$ and standard deviation $$\sigma$$ 
+ and take sufficiently large random samples from the population with replacement, 
+ then the distribution of the sample means will be approximately normally distributed.
+
+ > Theorem.
+<br>
+Let $$X_1, X_2, \dots X_i$$ be a sequence of independent random variables with $$E(X_i) = \mu$$ and $$Var(X_i) = \sigma^2$$.
+Let $$\overline{X_n} = \frac{\sum_i^nX_i}{n}$$. Then for any $$\epsilon > 0$$
+\\[
+\begin{equation}
+P(|\overline{X_n} - \mu| > \epsilon) \rightarrow 0, \; as \; n \rightarrow \infty
+\end{equation}
+\\]
 
 <br>
 #### Links
