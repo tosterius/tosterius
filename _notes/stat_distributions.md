@@ -48,7 +48,8 @@ Example: flipping a coin $$n$$ times. What is the probability of getting $$k$$ h
 
 The Poisson distribution can be derived as the limit of a binomial distribution as
 the number of trials, $$n$$, approaches infinity and the probability of success on each trial,
-$$p$$, approaches zero in such a way that $$np = \lambda$$.
+$$p$$, approaches zero in such a way that $$np = \lambda$$. **In other word the Poisson frequency 
+function is used to approximate binomial probabilities for large $$n$$ and small $$p$$**.
 
 \\[
 \begin{equation}
@@ -66,7 +67,7 @@ but the exact timing of events is random. The arrival of an event is independent
 (Poisson random variable also applies to disjoint regions of space.)
 
 We observe $$k$$ events in a time period given the length of the period and the average events per time
-$$\lambda$$ is an expacted number of events in interval (or region of space):
+$$\lambda$$ is an expected number of events in interval (or region of space):
 
 \\[
 \begin{equation}
