@@ -90,8 +90,16 @@ r_{xy}= \frac{\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
 \end{equation}
 \\]
 
-
-#### 4. Limit theorems
+<br>
+#### 4. Mean Absolute Deviation (MAD)
+\\[
+\begin{equation}
+MAD(X) = \frac{1}{n}\sum_i^n|x_i - m(X)|
+\end{equation}
+\\]
+here $$m(X)$$ is central point. The choice of measure $$m(X)$$ depends on our data set.
+<br>
+#### 5. Limit theorems
 ##### The law of large numbers
 As the number of identicaly ditributed, randomly generated numbers increases, their sample mean approaches their theoretical mean.
 
