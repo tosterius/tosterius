@@ -98,8 +98,29 @@ MAD(X) = \frac{1}{n}\sum_i^n|x_i - m(X)|
 \end{equation}
 \\]
 here $$m(X)$$ is central point. The choice of measure $$m(X)$$ depends on our data set.
+
 <br>
-#### 5. Limit theorems
+#### 5 Interquartile range (IQR)
+
+_Quartiles_ divide a rank-oredered data set into $$4$$ equal parts.
+The _interquartile_ range (IQR)_ is the difference between the first quartile and third quartile.
+$$Q_1$$ is the median of the $$n$$ smallest numbers
+$$Q_3$$ is the median of the $$n$$ largest numbers.
+\\[
+\begin{equation}
+IQR(X) = Q_3 - Q_1
+\end{equation}
+\\]
+##### Judging outliers in a dataset
+
+\\[
+\begin{equation}
+outliers < Q_1 - 1.5\cdot IQR(X)\;or\; outliers > Q_3 + 1.5\cdot IQR(X)
+\end{equation}
+\\]
+<br>
+#### 6. Limit theorems
+
 ##### The law of large numbers
 As the number of identicaly ditributed, randomly generated numbers increases, their sample mean approaches their theoretical mean.
 
@@ -119,15 +140,6 @@ P(|\overline{X_n} - \mu| > \epsilon) \rightarrow 0, \; as \; n \rightarrow \inft
  and take sufficiently large random samples from the population with replacement, 
  then the distribution of the sample means will be approximately normally distributed.
 
- > Theorem.
-<br>
-Let $$X_1, X_2, \dots X_i$$ be a sequence of independent random variables with $$E(X_i) = \mu$$ and $$Var(X_i) = \sigma^2$$.
-Let $$\overline{X_n} = \frac{\sum_i^nX_i}{n}$$. Then for any $$\epsilon > 0$$
-\\[
-\begin{equation}
-P(|\overline{X_n} - \mu| > \epsilon) \rightarrow 0, \; as \; n \rightarrow \infty
-\end{equation}
-\\]
 
 <br>
 #### Links
