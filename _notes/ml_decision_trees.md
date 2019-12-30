@@ -27,10 +27,10 @@ S = -\sum_{i}^C p_i log_2(p_i),
 where $$C$$ is the number of classes, $$p_i$$ is the probability to pick an element of class $$i$$.
 It can be interpreted as measure of uncertainty or randomness in data.
 
-**Information gain** is the reduction in entopy of the system :
+**Information gain** is the reduction in entropy (or another impurity criteria) of the system :
 \\[
 \begin{equation}
-G = S_0 - \sum_{g=1}^{g=Groups} \frac{N_g}{N}S_g
+IG = S_0 - \sum_{g=1}^{g=Groups} \frac{N_g}{N}S_g
 \end{equation}
 \\]
 
@@ -66,7 +66,7 @@ two more ordered groups.
 Information gain:
 \\[
 \begin{equation}
-G = S_0- \frac{10}{17}S_l - \frac{7}{17}S_r = 0.23546616740539644.
+IG = S_0- \frac{10}{17}S_l - \frac{7}{17}S_r = 0.23546616740539644.
 \end{equation}
 \\]
 We can continue to split the dataset into groups in the way in which we are until
@@ -74,3 +74,14 @@ the circles in each group are all of the same color.
 
 Usially we deal with multicategorial data represented as table(s). In each step ID3 algorithm
 choses the attribute with the largest information gain as the decision node.
+
+
+#### Gini index
+
+Another splitting criteria is based on Gini Index. It is used in the CART algorithm.
+\\[
+\begin{equation}
+G = 1 - \sum^{C}_{i=1}p_i
+\end{equation}
+\\]
+Gini Index and Entropy can be used interchangeably.
