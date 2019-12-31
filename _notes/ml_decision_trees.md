@@ -136,6 +136,11 @@ until we have calculated the sum of squared residuals for all remaining threshol
 in smallest sum of squared residuals is used as the root of our tree. To build decision tree we recursively apply 
 the same procedure for observations that ended up in the node to the left and right of the root.
 
+
+### 3. How to prevent overfitting
+
+- do splitting only if number of observations more than some minimum number
+- 
 <br>
 #### Links
 
