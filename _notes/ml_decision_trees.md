@@ -13,11 +13,11 @@ There are two types of decision trees:
 - **Regression tree** solves regression problems. Predicted outcome is real number
 
 #### Decision tree building
-Decicion tree algorithms transforms raw data to rule based decision tree.
+Decision tree algorithms transforms raw data to rule based decision tree.
 The decision of making data splits heavily affects a tree's accuracy. There are several algorithms to decide how to split a node in
-two or more subnodes. Sptitting criteria is different for classification and regression trees.
+two or more subnodes. Splitting criteria (metric) is different for classification and regression trees.
 
-#### ID3 (based on Entropy and Information Gain)
+###### Information Gain (based on Entropy)
 **Shannon's entropy** is defined as:
 \\[
 \begin{equation}
@@ -76,12 +76,37 @@ Usially we deal with multicategorial data represented as table(s). In each step 
 choses the attribute with the largest information gain as the decision node.
 
 
-#### Gini index
+###### Gini index (or Gini impurity)
 
 Another splitting criteria is based on Gini Index. It is used in the CART algorithm.
+Gini index is a measure of particular element being wrongly classified when it is randomly chosen.
 \\[
 \begin{equation}
 G = 1 - \sum^{C}_{i=1}p_i
 \end{equation}
 \\]
+where $$p_i$$ is the probability of object being classified to a particular class.
+It is easy to see that $$G=0$$ if all observations belong to the same class (label).
 Gini Index and Entropy can be used interchangeably.
+
+Gini based splitting favors larger partitions. Entropy  that have small counts but many distinct values.
+
+###### How to work with different types of features
+
+__Numeric feature type__:
+- sort elements by feature value
+- calculate the average feature value for all adjacent elements
+- calculate splitting criteria value for each average feature values
+- choose the best splitting criteria value
+
+__Categorical data, ranked data__:
+- calculate splitting criteria for each  feature value
+- choose the best splitting criteria value
+
+
+<br>
+#### Links
+
+- [Implementing Decision Tree From Scratch in Python](https://medium.com/@penggongting/implementing-decision-tree-from-scratch-in-python-c732e7c69aea)
+
+- [Decision Tree Flavors: Gini Index and Information Gain](http://www.learnbymarketing.com/481/decision-tree-flavors-gini-info-gain/)
