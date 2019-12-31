@@ -9,16 +9,21 @@ picture:
 
 There are two types of decision trees:
 
-- **Classification tree** solves classification problems. Predicted outcome is the category of the object it belongs to
-- **Regression tree** solves regression problems. Predicted outcome is real number
+- **Classification tree** solves classification problems. Predicted outcome is the category of the object it belongs to.
+  In a classification tree each leaf has discrete category.
+- **Regression tree** solves regression problems. Predicted outcome is real number.
+  In a regression tree each leaf represents a numeric value. 
 
-#### Decision tree building
+<br>
+### 1. Decision tree building. Classification tree.
+<br>
 Decision tree algorithms transforms raw data to rule based decision tree.
 The decision of making data splits heavily affects a tree's accuracy. There are several algorithms to decide how to split a node in
 two or more subnodes. Splitting criteria (metric) is different for classification and regression trees.
 
-###### Information Gain (based on Entropy)
-**Shannon's entropy** is defined as:
+##### Information Gain (based on Entropy)
+<br>
+*Shannon's entropy* is defined as:
 \\[
 \begin{equation}
 S = -\sum_{i}^C p_i log_2(p_i),
@@ -27,7 +32,8 @@ S = -\sum_{i}^C p_i log_2(p_i),
 where $$C$$ is the number of classes, $$p_i$$ is the probability to pick an element of class $$i$$.
 It can be interpreted as measure of uncertainty or randomness in data.
 
-**Information gain** is the reduction in entropy (or another impurity criteria) of the system :
+
+*Information gain* is the reduction in entropy (or another impurity criteria) of the system :
 \\[
 \begin{equation}
 IG = S_0 - \sum_{g=1}^{g=Groups} \frac{N_g}{N}S_g
@@ -75,8 +81,8 @@ the circles in each group are all of the same color.
 Usially we deal with multicategorial data represented as table(s). In each step ID3 algorithm
 choses the attribute with the largest information gain as the decision node.
 
-
-###### Gini index (or Gini impurity)
+<br>
+##### Gini index (or Gini impurity)
 
 Another splitting criteria is based on Gini Index. It is used in the CART algorithm.
 Gini index is a measure of particular element being wrongly classified when it is randomly chosen.
@@ -91,8 +97,14 @@ Gini Index and Entropy can be used interchangeably.
 
 Gini based splitting favors larger partitions. Entropy  that have small counts but many distinct values.
 
-###### How to work with different types of features
+<br>
 
+##### How to work with different types of features
+__Common notes__:
+- if chosen splitting feature does not give us a reduction in impurity score, we do not use
+  this feature
+- to handle with overfitting we could have used a threshold such that impurity reduction has to be large enough
+- 
 __Numeric feature type__:
 - sort elements by feature value
 - calculate the average feature value for all adjacent elements
@@ -103,6 +115,26 @@ __Categorical data, ranked data__:
 - calculate splitting criteria for each  feature value
 - choose the best splitting criteria value
 
+### 2. Regression tree.
+
+Let us consider, as an example how the amount of fertilizers influence growth rate of vegetables.
+![decision_tree_3]({{ site.baseurl }}/assets/img/notes/decision_tree_explanation_3.png)
+
+Consider very simple decision tree that splits our measurements into two groups based on
+whether or not $$F < 1.5$$. The average growth rate on the left is $$2$$. The average growth rate on the right side is $$6$$.
+These two values are the predictions that our decision tree will make.
+
+To quantify the quality of these predictions we will calculate the sum of squared residuals
+(differences between the observed and the predicted values).
+
+On the next picture we can see that our new decision bound results in a smaller sum of squared residuals.
+
+![decision_tree_4]({{ site.baseurl }}/assets/img/notes/decision_tree_explanation_4.png)
+
+We continue moving our decision boundary
+until we have calculated the sum of squared residuals for all remaining thresholds. And then threshold resulting
+in smallest sum of squared residuals is used as the root of our tree. To build decision tree we recursively apply 
+the same procedure for observations that ended up in the node to the left and right of the root.
 
 <br>
 #### Links
