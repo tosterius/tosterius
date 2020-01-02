@@ -88,7 +88,7 @@ Another splitting criteria is based on Gini Index. It is used in the CART algori
 Gini index is a measure of particular element being wrongly classified when it is randomly chosen.
 \\[
 \begin{equation}
-G = 1 - \sum^{C}_{i=1}p_i
+G = 1 - \sum^{C}_{i=1}p_i^2
 \end{equation}
 \\]
 where $$p_i$$ is the probability of object being classified to a particular class.

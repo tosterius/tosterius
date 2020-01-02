@@ -22,7 +22,7 @@ __Random Fores algorithm__:
    - Pick the best variable and split point among the $$m$$
    - Split the node into two child sub-nodes
   
-2. output the ensemble of trees $${T}^B$$
+2. output the ensemble of trees $$\\{T_1, T_2, \dots, T_B\\}$$
 
 Prediction for Regression trees:
 \\[
