@@ -28,7 +28,7 @@ layout: page
         <a href="{{ note.url | relative_url }}" class="note-link">
           <div class="item">
             <!-- <p class="meta">{{ note.date  | date: "%B %-d, %Y" }}</p> -->
-            <p class="title">{{ note.title }}</p>
+            <p class="title">{{ note.index }}. {{ note.title }}</p>
           </div>
         </a>
         {% endfor %}
