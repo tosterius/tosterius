@@ -38,11 +38,26 @@ c(x) = majorityvote(\\{c_b for\;b = 1\; to\; b = B\\})
 \end{equation}
 \\]
 
+#### Out of bag error
+
+Since we create bootstrapped data sets with duplicate entries, some entities
+will not be included to these data sets. These entities form an out of bag data set.
+To estimate out of bag error we calculate the average prediction error on all
+entities $$x_i$$ using only the trees that do not have $$x_i$$ in their training data set.
+
+#### Typical parameter values
+
+For classification typical value of $$m$$ is $$m = \lfloor\sqrt p \rfloor$$ and the minimum node size is $$1$$.
+
+For regression typical value of $$m$$ is $$m = \lfloor\frac{p}{3} \rfloor$$ and the minimum node size is $$5$$.
+
+#### Variable importance
+TODO
+
 #### Key features
 - there is no need to use validation data set to estimate the quality of trained model
 - additional usage case: RF can be used for identifying the most informative features
-- 
-
+  
 <br>
 #### Links
 [StatQuest: Random Forests Part 1 - Building, Using and Evaluating](https://www.youtube.com/watch?v=J4Wdy0Wc_xQ&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=38)
