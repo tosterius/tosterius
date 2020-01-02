@@ -51,6 +51,10 @@ For classification typical value of $$m$$ is $$m = \lfloor\sqrt p \rfloor$$ and 
 
 For regression typical value of $$m$$ is $$m = \lfloor\frac{p}{3} \rfloor$$ and the minimum node size is $$5$$.
 
+Since we know how to estimate the accuracy of Random Forest we can use this knowledge to find the optimal parameter $$m$$.
+(Just by comparing the accuracies of different RFs created using different $$m$$ values)
+
+
 #### Variable importance
 TODO
 
