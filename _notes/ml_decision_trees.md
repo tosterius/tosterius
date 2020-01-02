@@ -104,7 +104,7 @@ __Common notes__:
 - if chosen splitting feature does not give us a reduction in impurity score, we do not use
   this feature
 - to handle with overfitting we could have used a threshold such that impurity reduction has to be large enough
-- 
+  
 __Numeric feature type__:
 - sort elements by feature value
 - calculate the average feature value for all adjacent elements

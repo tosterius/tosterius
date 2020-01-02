@@ -38,6 +38,11 @@ c(x) = majorityvote(\\{c_b for\;b = 1\; to\; b = B\\})
 \end{equation}
 \\]
 
+#### Key features
+- there is no need to use validation data set to estimate the quality of trained model
+- additional usage case: RF can be used for identifying the most informative features
+- 
+
 <br>
 #### Links
 [StatQuest: Random Forests Part 1 - Building, Using and Evaluating](https://www.youtube.com/watch?v=J4Wdy0Wc_xQ&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=38)
