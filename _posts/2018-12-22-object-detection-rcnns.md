@@ -2,7 +2,7 @@
 layout: post
 title: Object detecion with R-CNN, Fast R-CNN, Faster-RCNN
 subtitle : R-CNN based object detection explaned
-tags: [Markdown]
+tags: [DL]
 author: Arthur
 comments : False
 ---
