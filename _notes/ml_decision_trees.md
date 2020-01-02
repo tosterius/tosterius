@@ -121,7 +121,7 @@ Let us consider, as an example how the amount of fertilizers influence growth ra
 ![decision_tree_3]({{ site.baseurl }}/assets/img/notes/decision_tree_explanation_3.png)
 
 Consider very simple decision tree that splits our measurements into two groups based on
-whether or not $$F < 1.5$$. The average growth rate on the left is $$2$$. The average growth rate on the right side is $$6$$.
+whether or not $$x < 1.5$$. The average growth rate on the left is $$2$$. The average growth rate on the right side is $$6$$.
 These two values are the predictions that our decision tree will make.
 
 To quantify the quality of these predictions we will calculate the sum of squared residuals
@@ -133,14 +133,59 @@ On the next picture we can see that our new decision bound results in a smaller 
 
 We continue moving our decision boundary
 until we have calculated the sum of squared residuals for all remaining thresholds. And then threshold resulting
-in smallest sum of squared residuals is used as the root of our tree. To build decision tree we recursively apply 
-the same procedure for observations that ended up in the node to the left and right of the root.
+in smallest sum of squared residuals is used as the root of our tree:
+\\[
+\begin{equation}
+\sum (y_i - F(x_i))^2 \rightarrow min
+\end{equation}
+\\]
+
+Model's prediction is:
+
+\\[
+\begin{equation}
+F(x) = \sum_{m-1}^{M}c_m I(x \in R_m)
+\end{equation}
+\\]
+
+where $$c_m$$ is the response in $$m$$-th region. $$I$$ indicates that $$x$$ belongs to the region $$R_m$$.
+
+To build regression tree we recursively apply the same procedure for observations that ended up in the node to the left and right of the root.
 
 
-### 3. How to prevent overfitting
+<!-- In other words algorithm decides on the splitting variables and split points. So if we have
+ a partition in $$M$$ regions $$R_1, R_2, \dots, R_M$$  -->
+
+#### How to prevent overfitting. Prunining regression trees.
 
 - do splitting only if number of observations more than some minimum number
-- 
+- pruning
+
+##### Cost complexity pruning
+We can prune a tree by removing some of the leaves and replacing the parent node with a leaf that is the average of removed nodes.
+We define _cost complexity)_ criteria or _tree score_:
+
+\\[
+\begin{equation}
+C(T) = SSR + \alpha |T|
+\end{equation}
+\\]
+where $$SSR$$ is the sum of squared residuals, $$\alpha >= 0$$ - tunning parameter (we
+find it using cross-validation).
+$$|T|$$ - the number of terminal nodes or leaves in tree $$T$$.
+
+The idea is to find, for each $$\alpha$$ a subtree to minimize $$C(T)$$.
+
+To do that do the following steps:
+
+1. build the full sized regression tree by fitting it on all of the data (not just the training data).
+   (increase $$\alpha$$ until pruning leaves will give us a lower _tree score_ and use the resulting subtree) $$\times N$$.
+   In the end different values of $$\alpha$$ give us a sequence of trees, from full sized to just a leaf
+2. split data into training and validation data sets. Just using the training data use the $$\alpha$$ values we found before to build a full
+   tree and a sequence of sub-trees that minimize the _tree score_. Use the validation data to calculate the $$SSR$$s for each new tree. 
+   10-fold cross-validation. The __final__ value of $$\alpha$$, on average, gives us the lowest $$SSR$$ with the validation data.
+3. go back to the trees from 1 and pick the tree that corresponds to the final value from 2
+
 <br>
 #### Links
 
