@@ -70,6 +70,21 @@ Cov(X, Y) = \frac{\sum_i(X-X_i)(Y-Y_i)}{n - 1}
 \end{equation}
 \\]
 
+###### Covariance matrix
+
+Data is represented as matrix $$X \in \mathbb{R}^{n \times d}$$, $$n$$ is the number of samples,
+$$d$$ is the dimension of feature space (or number of features).
+
+Calculation of covariance matrix is expressed as:
+\\[
+\begin{equation}
+C = \frac{1}{n-1} \sum^{n}_{i=1}{(X_i-\bar{X})(X_i-\bar{X})^T}
+\end{equation}
+\\]
+
+Here $$C_{i,j} = \sigma(x_i, x_j)$$ is the entity of the covariance matrix, $$C \in \mathbb{R}^{d \times d}$$.
+
+
 <br>
 #### 3. Correlation
 
@@ -156,5 +171,5 @@ P(|\overline{X_n} - \mu| > \epsilon) \rightarrow 0, \; as \; n \rightarrow \inft
 <br>
 #### Links
 - [https://en.wikipedia.org/wiki/Pearson_correlation_coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
-
+- [https://datascienceplus.com/]
 
