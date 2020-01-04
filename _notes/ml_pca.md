@@ -14,24 +14,43 @@ of linear transformations that expose the underlying meaning-structure of the ma
 These transformations are rotation (matrix $$U$$), rescaling (matrix $$\Sigma$$) and rotation again (matrix $$V^T$$).
 
 Let $$A_{[m \times n]}$$ be a data matrix with $$m$$ rows (documents or examples) and $$n$$ columns (terms or features).
-For convenience we assume $$m \geq n$$ and here we consider "compact" SVD.
+
 
 SVD represents an input matrix as a product of three matrices (it is always possible to do for real matrix):
 \\[
 \begin{equation}
-A_{[m \times n]} = U_{[m \times r]} \Sigma_{[r \times r]} V_{[n \times r]}^T,
+A_{m \times n} = U_{m\times m} \Sigma_{m\times n} V_{n\times n}^T
 \end{equation}
 \\]
 where
 
-- $$U_{[m \times r]}$$  is the matrix of left singular vectors, $$r$$ is the number of _latent factors_
-- $$\Sigma_{[r \times r]}$$ is diagonal matrix of the singular values. Also $$r$$ is the rank of matrix $$A$$
-- $$V_{[n \times r]}^T$$ is the matrix of right singular vectors
+- $$U_{m \times m}$$ is an orthonormal matrix of left singular vectors (eigenvectors of $$AA^T$$)
+- $$\Sigma_{m \times n}$$ is a diagonal matrix and contains the square-roots of the eigenvalues of $$AA^T$$ and $$A^T A$$
+- $$V_{n \times n}^T$$  is an orthonormal matrix of right singular vectors (the eigenvectors of $$A^T A$$)
+
+Depending on $$m$$, $$n$$, $$r = rank(A)$$, some of the left singular vectors may “collapse” to zero (see figure). 
+This happens when the matrix $$A$$ does not have full rank for instance, since then its range must be a subspace of $$R^m$$ with dimension $$r < n$$.
+
+![svd_1]({{ site.baseurl }}/assets/img/notes/svd_1.png)
+
+For convenience we assume that $$m \geq n$$ and here is the "compact" version of SVD:
+\\[
+\begin{equation}
+A_{m \times n} = U_{m \times r} \Sigma_{r \times r} V_{n \times r}^T,
+\end{equation}
+\\]
+where
+
+- $$U_{m \times r}$$ is the matrix of left singular vectors, $$r$$ is the number of _latent factors_
+- $$\Sigma_{r \times r}$$ is diagonal matrix of the singular values. Also $$r$$ is the rank of matrix $$A$$
+- $$V_{n \times r}^T$$ is the matrix of right singular vectors
+
+
 
 All three matrices are unique. $$U$$ and $$V$$ are column orthonormal. Entities of $$\Sigma$$ matrix are
 __positive and sorted in decreasing order__.
 
-![svd_0]({{ site.baseurl }}/assets/img/notes/svd_0.png)
+
 
 #### Math intuition
 Let $$\mathbf{v}_0$$ and $$\mathbf{v}_1$$ be orthogonal vectors in some two-dimensional vector space $$S$$. We know that any two orthogonal vectors 
@@ -88,6 +107,7 @@ A = \begin{bmatrix}
 \\]
 
 #### Applications
+![svd_0]({{ site.baseurl }}/assets/img/notes/svd_0.png)
 Let us take as example traditional customer-product data where $$m$$ customers consume $$n$$ products (for example movie rating matrix,
 grocery store products).  One hypothesizes that there are really only $$r$$ underlying basic factors like age, sex, income, etc. that
 determine a customer’s behavior. An individual customer’s behavior is determined by some weighted combination of these underlying factors.
@@ -100,6 +120,9 @@ of two matrices $$U$$ and $$V$$ where $$U$$ is an $$m \times r$$ matrix expressi
 each customer and $$V$$ is a $$r \times n$$ matrix expressing the purchase probabilities of products
 that correspond to that factor. One twist is that $$A$$ may not be exactly equal to $$UV$$ , but
 close to it since there may be noise or random perturbations[4].
+
+
+### II. PCA
 
 <br>
 #### Links 
