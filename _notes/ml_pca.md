@@ -14,6 +14,8 @@ of linear transformations that expose the underlying meaning-structure of the ma
 These transformations are rotation (matrix $$U$$), rescaling (matrix $$\Sigma$$) and rotation again (matrix $$V^T$$).
 
 Let $$A_{[m \times n]}$$ be a data matrix with $$m$$ rows (documents or examples) and $$n$$ columns (terms or features).
+For convenience we assume $$m \geq n$$ and here we consider "compact" SVD.
+
 SVD represents an input matrix as a product of three matrices (it is always possible to do for real matrix):
 \\[
 \begin{equation}
@@ -27,11 +29,11 @@ where
 - $$V_{[n \times r]}^T$$ is the matrix of right singular vectors
 
 All three matrices are unique. $$U$$ and $$V$$ are column orthonormal. Entities of $$\Sigma$$ matrix are
-positive and sorted in decreasing order.
+__positive and sorted in decreasing order__.
 
 ![svd_0]({{ site.baseurl }}/assets/img/notes/svd_0.png)
 
-#### Math explanation
+#### Math intuition
 Let $$\mathbf{v}_0$$ and $$\mathbf{v}_1$$ be orthogonal vectors in some two-dimensional vector space $$S$$. We know that any two orthogonal vectors 
 form a basis in two-dimensional space. Linear operator $$A$$ maps $$S$$ to $$Q$$:
 \\[
@@ -51,7 +53,7 @@ Any vector $$\mathbf{x}$$ can be written as:
 \\]
 where $$\mathbf{x} \cdot \mathbf{v}$$ is just a projection $$\mathbf{x}$$ on to $$\mathbf{v}$$.
 
-Multiplying both sides by $$M$$ rewrite the previous equation:
+Multiplying both sides by $$A$$ rewrite the previous equation:
 \\[
 \begin{equation}
 A \mathbf{x} = (\mathbf{x} \cdot \mathbf{v}_1) A \mathbf{v}_1 + (\mathbf{x} \cdot \mathbf{v}_2) A \mathbf{v}_2
@@ -85,10 +87,24 @@ A = \begin{bmatrix}
 \tag{5}\label{eq5}
 \\]
 
-#### Sample
-TODO
+#### Applications
+Let us take as example traditional customer-product data where $$m$$ customers consume $$n$$ products (for example movie rating matrix,
+grocery store products).  One hypothesizes that there are really only $$r$$ underlying basic factors like age, sex, income, etc. that
+determine a customer’s behavior. An individual customer’s behavior is determined by some weighted combination of these underlying factors.
+That is, a customer’s purchase behavior can be characterized by a $$r$$-dimensional vector where $$r$$ is much smaller
+that $$m$$ and $$n$$. The components of the vector are weights for each of the basic factors.
+Associated with each basic factor is a vector of probabilities, each component of which is
+the probability of purchasing a given product by someone whose behavior depends only
+on that factor. More abstractly, $$A$$ is an $$m\times n$$ matrix that can be expressed as the product
+of two matrices $$U$$ and $$V$$ where $$U$$ is an $$m \times r$$ matrix expressing the factor weights for
+each customer and $$V$$ is a $$r \times n$$ matrix expressing the purchase probabilities of products
+that correspond to that factor. One twist is that $$A$$ may not be exactly equal to $$UV$$ , but
+close to it since there may be noise or random perturbations. []
+
 <br>
-#### Links
+#### Links One hypothesizes
+that there are really only k underlying basic factors like age, income, family size, etc. that
+determine a customer’s purchase behavior.
 
 - [Practical Text Mining and Statistical Analysis for Non-structured Text Data Applications](https://www.sciencedirect.com/book/9780123869791/practical-text-mining-and-statistical-analysis-for-non-structured-text-data-applications)
 - [Singular Value Decomposition as Simply as Possible](http://gregorygundersen.com/blog/2018/12/10/svd/)
