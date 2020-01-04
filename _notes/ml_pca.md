@@ -99,13 +99,14 @@ on that factor. More abstractly, $$A$$ is an $$m\times n$$ matrix that can be ex
 of two matrices $$U$$ and $$V$$ where $$U$$ is an $$m \times r$$ matrix expressing the factor weights for
 each customer and $$V$$ is a $$r \times n$$ matrix expressing the purchase probabilities of products
 that correspond to that factor. One twist is that $$A$$ may not be exactly equal to $$UV$$ , but
-close to it since there may be noise or random perturbations. []
+close to it since there may be noise or random perturbations[4].
 
 <br>
 #### Links One hypothesizes
 that there are really only k underlying basic factors like age, income, family size, etc. that
 determine a customer’s purchase behavior.
 
-- [Practical Text Mining and Statistical Analysis for Non-structured Text Data Applications](https://www.sciencedirect.com/book/9780123869791/practical-text-mining-and-statistical-analysis-for-non-structured-text-data-applications)
-- [Singular Value Decomposition as Simply as Possible](http://gregorygundersen.com/blog/2018/12/10/svd/)
-- [Deep Learning Book Series · 2.8 Singular Value Decomposition](https://hadrienj.github.io/posts/Deep-Learning-Book-Series-2.8-Singular-Value-Decomposition/)
+1. [Practical Text Mining and Statistical Analysis for Non-structured Text Data Applications](https://www.sciencedirect.com/book/9780123869791/practical-text-mining-and-statistical-analysis-for-non-structured-text-data-applications)
+2. [Singular Value Decomposition as Simply as Possible](http://gregorygundersen.com/blog/2018/12/10/svd/)
+3. [Deep Learning Book Series · 2.8 Singular Value Decomposition](https://hadrienj.github.io/posts/Deep-Learning-Book-Series-2.8-Singular-Value-Decomposition/)
+4. [Foundations of Data Science, Avrim Blum, John Hopcroft, and Ravindran Kannan](https://www.cs.cmu.edu/~venkatg/teaching/CStheory-infoage/book-chapter-4.pdf)
