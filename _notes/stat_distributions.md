@@ -2,7 +2,7 @@
 layout: note
 title: "Refresher notes: Probability distributions"
 category: "Statistics"
-index: 7
+index: 1
 headline:
 picture:
 ---

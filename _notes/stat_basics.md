@@ -2,7 +2,7 @@
 layout: note
 title: "Basics of statistics"
 category: "Statistics"
-index: 6
+index: 0
 headline:
 picture:
 ---
