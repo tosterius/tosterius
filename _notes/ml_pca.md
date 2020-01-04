@@ -10,7 +10,8 @@ picture:
 ### I. SVD
 
 Singular value decomposition (SVD) is a method of representing a matrix as a series
-of linear approximations that expose the underlying meaning-structure of the matrix.
+of linear transformations that expose the underlying meaning-structure of the matrix.
+These transformations are rotation (matrix $$U$$), rescaling (matrix $$\Sigma$$) and rotation again (matrix $$V^T$$).
 
 Let $$A_{[m \times n]}$$ be a data matrix with $$m$$ rows (documents or examples) and $$n$$ columns (terms or features).
 SVD represents an input matrix as a product of three matrices (it is always possible to do for real matrix):
@@ -85,9 +86,10 @@ A = \begin{bmatrix}
 \\]
 
 #### Sample
-
+TODO
 <br>
 #### Links
 
 - [Practical Text Mining and Statistical Analysis for Non-structured Text Data Applications](https://www.sciencedirect.com/book/9780123869791/practical-text-mining-and-statistical-analysis-for-non-structured-text-data-applications)
 - [Singular Value Decomposition as Simply as Possible](http://gregorygundersen.com/blog/2018/12/10/svd/)
+- [Deep Learning Book Series · 2.8 Singular Value Decomposition](https://hadrienj.github.io/posts/Deep-Learning-Book-Series-2.8-Singular-Value-Decomposition/)
