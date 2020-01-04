@@ -78,7 +78,7 @@ $$d$$ is the dimension of feature space (or number of features).
 Calculation of covariance matrix is expressed as:
 \\[
 \begin{equation}
-C = \frac{1}{n-1} \sum^{n}_{i=1}{(X_i-\bar{X})(X_i-\bar{X})^T}
+C = \frac{1}{n-1} \sum^{n}_{i=1}{(X_i-\bar{X})(X_i-\bar{X})^T} = \frac{1}{n-1} X^T X
 \end{equation}
 \\]
 
