@@ -13,7 +13,7 @@ Singular value decomposition (SVD) is a method of representing a matrix as a ser
 of linear transformations that expose the underlying meaning-structure of the matrix.
 These transformations are rotation (matrix $$U$$), rescaling (matrix $$\Sigma$$) and rotation again (matrix $$V^T$$).
 
-Let $$A_{[m \times n]}$$ be a data matrix with $$m$$ rows (documents or examples) and $$n$$ columns (terms or features).
+Let $$A_{m \times n}$$ be a data matrix with $$m$$ rows (documents or examples) and $$n$$ columns (terms or features).
 
 
 SVD represents an input matrix as a product of three matrices (it is always possible to do for real matrix):
@@ -122,7 +122,21 @@ that correspond to that factor. One twist is that $$A$$ may not be exactly equal
 close to it since there may be noise or random perturbations[4].
 
 
-### II. PCA
+### II. PCA. Relation Between SVD and PCA.
+
+We are given data matrix $$X_{m \times n}$$ with $$m$$ rows (samples) and $$n$$ columns (number of terms or features).
+Let us calulate its SVD:
+\\[
+\begin{equation}
+X = U \Sigma V^{\top}.
+\end{equation}
+\\]
+Substituting the expression for $$X$$ to $$X^{\top} X$$ we get: 
+\\[
+\begin{equation}
+X^TX = (U\Sigma V^T)^T(U \Sigma V^T) = V \Sigma^T U^T U \Sigma V^T = V (\Sigma^T \Sigma) V^T\,,
+\end{equation}
+\\]
 
 <br>
 #### Links 
@@ -131,3 +145,4 @@ close to it since there may be noise or random perturbations[4].
 2. [Singular Value Decomposition as Simply as Possible](http://gregorygundersen.com/blog/2018/12/10/svd/)
 3. [Deep Learning Book Series · 2.8 Singular Value Decomposition](https://hadrienj.github.io/posts/Deep-Learning-Book-Series-2.8-Singular-Value-Decomposition/)
 4. [Foundations of Data Science, Avrim Blum, John Hopcroft, and Ravindran Kannan](https://www.cs.cmu.edu/~venkatg/teaching/CStheory-infoage/book-chapter-4.pdf)
+5. [Relation Between SVD and PCA](https://intoli.com/blog/pca-and-svd/)
