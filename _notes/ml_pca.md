@@ -9,6 +9,9 @@ picture:
 
 ### I. SVD
 
+Singular value decomposition (SVD) is a method of representing a matrix as a series
+of linear approximations that expose the underlying meaning-structure of the matrix.
+
 Let $$A_{[m \times n]}$$ be a data matrix with $$m$$ rows (documents or examples) and $$n$$ columns (terms or features).
 SVD represents an input matrix as a product of three matrices (it is always possible to do for real matrix):
 \\[
@@ -29,11 +32,11 @@ positive and sorted in decreasing order.
 
 #### Math explanation
 Let $$\mathbf{v}_0$$ and $$\mathbf{v}_1$$ be orthogonal vectors in some two-dimensional vector space $$S$$. We know that any two orthogonal vectors 
-form a basis in two-dimensional space. Linear operator $$L$$ maps $$S$$ to $$Q$$:
+form a basis in two-dimensional space. Linear operator $$A$$ maps $$S$$ to $$Q$$:
 \\[
 \begin{split}
-L \mathbf{v}_1 &= \mathbf{u}_1 \sigma_1\\ \;\;
-L \mathbf{v}_2 &= \mathbf{u}_2 \sigma_2 
+A \mathbf{v}_1 &= \mathbf{u}_1 \sigma_1\\ \;\;
+A \mathbf{v}_2 &= \mathbf{u}_2 \sigma_2 
 \end{split} \tag{1}\label{eq1}
 \\]
 where $$\mathbf{u}_1$$ and $$\mathbf{u}_2$$ are the unit vectors in $$Q$$.
@@ -50,17 +53,17 @@ where $$\mathbf{x} \cdot \mathbf{v}$$ is just a projection $$\mathbf{x}$$ on to 
 Multiplying both sides by $$M$$ rewrite the previous equation:
 \\[
 \begin{equation}
-L \mathbf{x} = (\mathbf{x} \cdot \mathbf{v}_1) L \mathbf{v}_1 + (\mathbf{x} \cdot \mathbf{v}_2) L \mathbf{v}_2
+A \mathbf{x} = (\mathbf{x} \cdot \mathbf{v}_1) A \mathbf{v}_1 + (\mathbf{x} \cdot \mathbf{v}_2) A \mathbf{v}_2
 \end{equation}
 \\]
 \\[
 \begin{equation}
-L \mathbf{x} = (\mathbf{x} \cdot \mathbf{v}_1) \mathbf{u}_1 \sigma_1 + (\mathbf{x} \cdot \mathbf{v}_2) \mathbf{u}_2 \sigma_2
+A \mathbf{x} = (\mathbf{x} \cdot \mathbf{v}_1) \mathbf{u}_1 \sigma_1 + (\mathbf{x} \cdot \mathbf{v}_2) \mathbf{u}_2 \sigma_2
 \end{equation}
 \\]
 \\[
 \begin{equation}
-L \mathbf{x} = \mathbf{u}_1 \sigma_1 \mathbf{v}_1^{\top} \mathbf{x} + \mathbf{u}_2 \sigma_2 \mathbf{v}_2^{\top} \mathbf{x} \tag{3}\label{eq3}
+A \mathbf{x} = \mathbf{u}_1 \sigma_1 \mathbf{v}_1^{\top} \mathbf{x} + \mathbf{u}_2 \sigma_2 \mathbf{v}_2^{\top} \mathbf{x} \tag{3}\label{eq3}
 \end{equation}
 \\]
 In the last equation we use the option $$\mathbf{x} \cdot \mathbf{v}_1 = \mathbf{x}^{\top} \mathbf{v}_1 = \mathbf{v}_1^{\top} \mathbf{x}$$.
@@ -68,11 +71,23 @@ In the last equation we use the option $$\mathbf{x} \cdot \mathbf{v}_1 = \mathbf
 Dividing the equation $$\ref{eq3}$$ by $$\mathbf{x}$$, we get
 \\[
 \begin{equation}
-L = \mathbf{u}_1 \sigma_1 \mathbf{v}_1 + \mathbf{u}_2 \sigma_2 \mathbf{v}_2 \tag{4}\label{eq4}
+A = \mathbf{u}_1 \sigma_1 \mathbf{v}_1 + \mathbf{u}_2 \sigma_2 \mathbf{v}_2 \tag{4}\label{eq4}
 \end{equation}
+\\]
+Equation $$\ref{eq4}$$ can be transformed to canonical SVD form:
+\\[
+A = \begin{bmatrix}
+\mathbf{u}_1 & \mathbf{u}_2
+\end{bmatrix}
+\begin{bmatrix}\sigma_1 & 0 \\\\ 0 & \sigma_2 \end{bmatrix}
+\begin{bmatrix} \mathbf{v}_1^{\top} \\\\ \mathbf{v}_2^{\top} \end{bmatrix}
+\tag{5}\label{eq5}
 \\]
 
 #### Sample
 
 <br>
 #### Links
+
+- [Practical Text Mining and Statistical Analysis for Non-structured Text Data Applications](https://www.sciencedirect.com/book/9780123869791/practical-text-mining-and-statistical-analysis-for-non-structured-text-data-applications)
+- [Singular Value Decomposition as Simply as Possible](http://gregorygundersen.com/blog/2018/12/10/svd/)
