@@ -102,9 +102,7 @@ that correspond to that factor. One twist is that $$A$$ may not be exactly equal
 close to it since there may be noise or random perturbations[4].
 
 <br>
-#### Links One hypothesizes
-that there are really only k underlying basic factors like age, income, family size, etc. that
-determine a customer’s purchase behavior.
+#### Links 
 
 1. [Practical Text Mining and Statistical Analysis for Non-structured Text Data Applications](https://www.sciencedirect.com/book/9780123869791/practical-text-mining-and-statistical-analysis-for-non-structured-text-data-applications)
 2. [Singular Value Decomposition as Simply as Possible](http://gregorygundersen.com/blog/2018/12/10/svd/)
