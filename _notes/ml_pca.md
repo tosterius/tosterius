@@ -124,6 +124,12 @@ close to it since there may be noise or random perturbations[4].
 
 ### II. PCA. Relation Between SVD and PCA.
 
+Steps to implement PCA:
+1. Data normalization and centering
+2. Covariance matrix computation
+3. Computation of eigenvalues and eigenvectors
+4. Sorting them from largest to smallest and choosing comonents
+5. 
 We are given data matrix $$X_{m \times n}$$ with $$m$$ rows (samples) and $$n$$ columns (number of terms or features).
 Let us calulate its SVD:
 \\[

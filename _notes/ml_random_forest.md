@@ -54,6 +54,17 @@ For regression typical value of $$m$$ is $$m = \lfloor\frac{p}{3} \rfloor$$ and 
 Since we know how to estimate the accuracy of Random Forest we can use this knowledge to find the optimal parameter $$m$$.
 (Just by comparing the accuracies of different RFs created using different $$m$$ values)
 
+#### Missing data
+Probably the easiest way to fill in a table with missing data is to use median, mean or mode's values of the feature.
+It is a good initial guess. RF allows us to refine that initial guess until it is a good guess. To do this
+we first determine which samples are similar to the one with missing data. So here we go.
+
+- First we need to fill in our data table with initial guesses
+- We repeatedly the folloeing:
+  1. Build a Random Forest
+  2. Run all of the data
+  3. Fill in Proximity Matrix
+
 
 #### Variable importance
 TODO
