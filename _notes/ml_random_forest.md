@@ -54,17 +54,23 @@ For regression typical value of $$m$$ is $$m = \lfloor\frac{p}{3} \rfloor$$ and 
 Since we know how to estimate the accuracy of Random Forest we can use this knowledge to find the optimal parameter $$m$$.
 (Just by comparing the accuracies of different RFs created using different $$m$$ values)
 
-#### Missing data
+#### Missing data in the training dataset
 Probably the easiest way to fill in a table with missing data is to use median, mean or mode's values of the feature.
 It is a good initial guess. RF allows us to refine that initial guess until it is a good guess. To do this
 we first determine which samples are similar to the one with missing data. So here we go.
 
-- First we need to fill in our data table with initial guesses
-- We repeatedly the folloeing:
-  1. Build a Random Forest
-  2. Run all of the data
-  3. Fill in Proximity Matrix
+1. First we need to fill in our data table with initial guesses
+2. We repeatedly do the following until the missing values converge:
+   1. Build a Random Forest
+   2. Run all of the data
+   3. Fill in Proximity Matrix. Proximity Matrix is a $$M \times M$$ matrix $$P$$ with a row and a column for each sample.
+   Each cell contains a similarity measure: there is a similarity between two samples if running them down a tree ends up in the same node.
+   If $$i$$-th and $$j$$-th samples are similar $$P[i,j]$$ is incremented. Finally we divide each proximity value by the total number of 
+   trees in RF.
+   4. Recalculate the missing values using proximity matrix (as a weighted average, or weighted frequency)
 
+#### Missing data in the dataset that we want to categorize
+TODO
 
 #### Variable importance
 TODO
