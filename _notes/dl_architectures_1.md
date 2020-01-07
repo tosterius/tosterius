@@ -65,9 +65,14 @@ x_{L} = x_l + \sum_{i=l}^{i=L-1}F(x_i, W_i)
 Denoting loss functions as $$C$$, from the chain rule of backpropagation we get:
 \\[
 \begin{equation}
-\frac{\partial C}{\partial x_l} = \frac{\partial C}{\partial x_L} \frac{\partial x_L}{\partial x_l}
+\frac{\partial C}{\partial x_l} = \frac{\partial C}{\partial x_L} \frac{\partial x_L}{\partial x_l} = 
+\frac{\partial C}{\partial x_L} (1 + \frac{\partial}{\partial x_l} \sum_{i=l}^{i=L-1}F(x_i, W_i) )
 \end{equation}
 \\]
+We see that the term of $$\frac{\partial C}{\partial x_L}$$ ensures that information is
+directly propagated back to any shallower unit $$l$$.  And it is suggested it is unlikely that the gradient
+$$\frac{\partial C}{\partial x_L}$$ to be canceled out for minibatch, because in general term 
+$$\sum_{i=l}^{i=L-1}F(x_i, W_i)$$ cannot be always $$-1$$ for all samples in minibatch [2].
 
 #### Inception
 
