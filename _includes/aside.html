@@ -29,7 +29,7 @@
 {% assign categories = site.notes | group_by: "category" | sort: "title" %}
 <div id="note-wrap">
   <a href="{{ site.url }}/notes">
-    <p class="title">Notes on</p>
+    <p class="title">Notes</p>
   </a>
   {% for category in categories %}
   <a href="{{site.baseurl}}/notes#{{ category.name | cgi_encode }}">
