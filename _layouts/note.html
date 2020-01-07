@@ -43,10 +43,10 @@ layout: page
 
 <div class="NotePageNavigation">
   {% if prevurl %}
-    <a class="prev" href="{{prevurl}}">&laquo; {{prevtitle}}</a>
+    <a class="prev" href="{{prevurl}}">&laquo; {{prevtitle | truncatewords: 3}}</a>
   {% endif %}
   {% if nexturl %}
-    <a class="next" href="{{nexturl}}">{{nexttitle}} &raquo;</a>
+    <a class="next" href="{{nexturl}}">{{nexttitle | truncatewords: 3}} &raquo;</a>
   {% endif %}
 </div>
 
