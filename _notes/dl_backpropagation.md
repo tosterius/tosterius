@@ -7,6 +7,4 @@ headline:
 picture: 
 ---
 
-#### Transposed convolution (deconvolution)
-
-#### Atorus convolution (dilated convolution)
+Let us start with a notation which we will use in the explanation.
