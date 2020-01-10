@@ -7,6 +7,3 @@ headline:
 picture: 
 ---
 
-#### Transposed convolution (deconvolution)
-
-#### Atorus convolution (dilated convolution)

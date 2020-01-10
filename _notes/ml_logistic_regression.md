@@ -1,5 +1,5 @@
 ---
-layout: note # You can ommit this if you've set it as a default
+layout: note
 title: Logistic Regression
 category: ML
 index: 1
