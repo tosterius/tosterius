@@ -121,8 +121,36 @@ each customer and $$V$$ is a $$r \times n$$ matrix expressing the purchase proba
 that correspond to that factor. One twist is that $$A$$ may not be exactly equal to $$UV$$ , but
 close to it since there may be noise or random perturbations[4].
 
-
+<br>
 ### II. PCA. Relation Between SVD and PCA.
+Let us assume that our data centered and represented by matrix $$\mathbf A_{m \times n}$$.
+The covariance matrix is given by $$\mathbf C = \frac{\mathbf A^\top \mathbf A}{m-1}$$ and it can be diagonalized:
+\\[
+\begin{equation}
+\mathbf C = \mathbf V \mathbf \Lambda \mathbf V^\top,
+\end{equation}
+\\]
+where 
+- $$\mathbf V$$ is a matrix of eigenvectors or _principal directions_ (each column is an eigenvector) 
+- $$\mathbf \Lambda$$ is a diagonal matrix with eigenvalues $$\lambda_i$$ in the decreasing order on the diagonal.
+  
+Projections of the data on the principal directions are called _principal components_.
+The $$j$$-th principal component is given by $$j$$-th column of $$\mathbf A \mathbf V$$. The coordinates of the $$i$$-th 
+data point in the new PC space are given by the $$i$$-th row of $$\mathbf A \mathbf V$$.
+
+Performing SVD we get:
+\\[
+\begin{equation}
+\mathbf A = \mathbf U \mathbf \Sigma \mathbf V^\top,
+\end{equation}
+\\]
+\\[
+\begin{equation}
+\mathbf C = \frac{\mathbf V \mathbf \Sigma \mathbf U^\top \mathbf U \mathbf \Sigma \mathbf V^\top}{m-1} = \mathbf V \frac{\mathbf \Sigma^2}{m-1}\mathbf V^\top,
+\end{equation}
+\\]
+
+Principal components are given by $$\mathbf A \mathbf V = \mathbf U \mathbf \Sigma \mathbf V^\top \mathbf V = \mathbf U \mathbf \Sigma$$
 
 Steps to implement PCA:
 1. Data normalization and centering
