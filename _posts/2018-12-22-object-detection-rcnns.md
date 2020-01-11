@@ -30,19 +30,32 @@ The linear regression model learns scale-invariant transformation between two ce
 
 ![rcnn]({{ site.baseurl }}/assets/img/blog/rcnn.png)
 
+<br>
 #### Fast R-CNN
 
-Instead of running a CNN 2000 times per image Fast R-CNN introduces _Region Prooposal Network_ (RPN).
+Instead of running a CNN 2000 times per image Fast R-CNN pools CNN features corresponding to each region proposal.
+![fast-rcnn]({{ site.baseurl }}/assets/img/blog/fast-rcnn.png)
+
+ROI poolling layer is used to convert proposed regions to regions of fixed size.
+Finally, these regions are passed to fully connected network which classify them and as well as return the bounding boxes
+using softmax and linear regression (as we saw it in RCNN) layer simultaneously.
+
+<br>
+#### Faster R-CNN
+
+Faster R-CNN introduces _Region Prooposal Network_ (RPN).
 It's purpose is to extract all the regions of interest (ROIs).
 RPN is based on idea of _anchor boxes_: at each positon of output feature map 9 (3 sizes and 3 shapes) 
 anchor boxes are generated. To generate labels
 for training RPN IoU of all anchor boxes against all the ground truth boxes is calculated.
 
-After RPN proposed regions are in different sizes. ROI poolling layer is used to convert proposed regions to
-regions of fixed size.
-Finally, these regions are passed to fully connected network which classify them and as well as return the bounding boxes
-using softmax and linear regression (as we saw it in RCNN) layer simultaneously.
-![fast-rcnn]({{ site.baseurl }}/assets/img/blog/fast-rcnn.png)
+After RPN proposed regions are in different sizes. 
+![faster-rcnn]({{ site.baseurl }}/assets/img/blog/faster-rcnn.png)
 
 
-#### Faster-RCNN
+
+
+<br>
+#### Links
+
+1. [Getting Started with R-CNN, Fast R-CNN, and Faster R-CNN](https://www.mathworks.com/help/vision/ug/getting-started-with-r-cnn-fast-r-cnn-and-faster-r-cnn.html)
