@@ -12,6 +12,11 @@ Let us start with a notation which we will use in the explanation.
 - $$w_{jk}^l$$ is the weight for node $$k$$ in the layer $$l$$ for incoming node $$j$$
 - $$b_j^l$$ is the bias for node $$j$$ in the layer $$l$$
 - $$a_j^l$$ is the activation of $$j$$-th neuron in the layer $$l$$
+- E is the cost function
+
+The goal of backpropagation is to minimize the cost function $$E$$ by computing the partial derivatives 
+$$\frac{\partial E}{\partial w}$$ and $$\frac{\partial E}{\partial b}$$ with respect to any weight and 
+bias in the network.
 
 ![backpropagation_0]({{ site.baseurl }}/assets/img/notes/backpropagation_0.png)
 
