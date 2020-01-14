@@ -152,25 +152,16 @@ Performing SVD we get:
 
 Principal components are given by $$\mathbf A \mathbf V = \mathbf U \mathbf \Sigma \mathbf V^\top \mathbf V = \mathbf U \mathbf \Sigma$$
 
-Steps to implement PCA:
+
+#### Another way to implement PCA:
+
 1. Data normalization and centering
 2. Covariance matrix computation
 3. Computation of eigenvalues and eigenvectors
-4. Sorting them from largest to smallest and choosing comonents
-5. 
-We are given data matrix $$X_{m \times n}$$ with $$m$$ rows (samples) and $$n$$ columns (number of terms or features).
-Let us calulate its SVD:
-\\[
-\begin{equation}
-X = U \Sigma V^{\top}.
-\end{equation}
-\\]
-Substituting the expression for $$X$$ to $$X^{\top} X$$ we get: 
-\\[
-\begin{equation}
-X^TX = (U\Sigma V^T)^T(U \Sigma V^T) = V \Sigma^T U^T U \Sigma V^T = V (\Sigma^T \Sigma) V^T\,,
-\end{equation}
-\\]
+4. Sorting them from largest to smallest and choosing comonents.
+   Choose $$k$$ eigenvectors with the largest eigenvalues (dimension reduction).
+5. To compute Principal Components form a feature vector using the eigenvectors we chose to keep.
+   Multiply the original data by the eigenvectors to re-orient data onto the new axes
 
 <br>
 #### Links 
