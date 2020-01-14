@@ -14,9 +14,10 @@ Let us start with a notation which we will use in the explanation.
 - $$a_j^l$$ is the activation of $$j$$-th neuron in the layer $$l$$
 - E is the cost function
 
-The goal of backpropagation is to minimize the cost function $$E$$ by computing the partial derivatives 
+> 
+__The goal of backpropagation is to minimize the cost function $$E$$ by computing the partial derivatives 
 $$\frac{\partial E}{\partial w}$$ and $$\frac{\partial E}{\partial b}$$ with respect to any weight and 
-bias in the network.
+bias in the network.__
 
 ![backpropagation_0]({{ site.baseurl }}/assets/img/notes/backpropagation_0.png)
 
@@ -30,6 +31,14 @@ or vectorized form
 \\[
 \begin{equation}
 a^{l} = \sigma(w^l a^{l-1}+b^l).
+\end{equation}
+\\]
+
+We define a error of $$j$$-th neuron on the $$l$$-th layer:
+
+\\[
+\begin{equation}
+\delta^l_j \equiv \frac{\partial E}{\partial z^l_j}
 \end{equation}
 \\]
 
