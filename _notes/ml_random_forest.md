@@ -34,7 +34,7 @@ f(x) = \frac{1}{B}\sum_{b=1}^{B}T_b(x)
 Prediction for Classification trees:
 \\[
 \begin{equation}
-c(x) = majorityvote(\\{c_b for\;b = 1\; to\; b = B\\})
+c(x) = majority\\_vote(\\{c_b for\;b = 1\; to\; b = B\\})
 \end{equation}
 \\]
 
