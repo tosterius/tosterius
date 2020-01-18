@@ -163,7 +163,7 @@ To build regression tree we recursively apply the same procedure for observation
 
 ##### Cost complexity pruning
 We can prune a tree by removing some of the leaves and replacing the parent node with a leaf that is the average of removed nodes.
-We define _cost complexity)_ criteria or _tree score_:
+We define _cost complexity_ criteria or _tree score_:
 
 \\[
 \begin{equation}
@@ -181,6 +181,8 @@ To do that do the following steps:
 1. build the full sized regression tree by fitting it on all of the data (not just the training data).
    (increase $$\alpha$$ until pruning leaves will give us a lower _tree score_ and use the resulting subtree) $$\times N$$.
    In the end different values of $$\alpha$$ give us a sequence of trees, from full sized to just a leaf
+   ![rtree_pruning_0]({{ site.baseurl }}/assets/img/notes/rtree_pruning_0.png)
+   
 2. split data into training and validation data sets. Just using the training data use the $$\alpha$$ values we found before to build a full
    tree and a sequence of sub-trees that minimize the _tree score_. Use the validation data to calculate the $$SSR$$s for each new tree. 
    10-fold cross-validation. The __final__ value of $$\alpha$$, on average, gives us the lowest $$SSR$$ with the validation data.
