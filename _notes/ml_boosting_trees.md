@@ -74,10 +74,13 @@ and $$1$$ for worst stump. We finish the first iteration by updating the weights
 $$(\ref{eq2})$$ we first compute the expression in numerator and then sum up the result values to get normalization 
 coefficient $$Z_t$$.
 
-
-
+In the picture below there is a graph of $$\exp(-\alpha_t y_i h_t(x_i))$$ depending on the sign of $$y_i h_t(x_i)$$.
+![adaboost_0]({{ site.baseurl }}/assets/img/notes/adaboost_0.png)
+It easy to see when the value of $$y_i h_t(x_i)$$ is positive i.e. the signs of both ground truth value $$y_i$$ and 
+hyphothesis $$h_t(x_i)$$ match, then we scale the previous sample with small number and vice versa.
 
 <br>
 #### Links
 
-[Explaining AdaBoost, Robert E. Schapire](http://rob.schapire.net/papers/explaining-adaboost.pdf)
+- [Explaining AdaBoost, Robert E. Schapire](http://rob.schapire.net/papers/explaining-adaboost.pdf)
+- [StatQuest with Josh Starmer: AdaBoost, Clearly Explained](https://www.youtube.com/watch?v=LsK-xG1cLYA&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=43)
