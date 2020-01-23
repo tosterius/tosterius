@@ -48,10 +48,11 @@ If our loss function is SSR then $\gamma$ is just the mean of $y_1,\dots y_n$.
     4. Update
     \\[
     \begin{equation}
-    F_m(x) = F_{m-1}(x) + \sum_{j=1}^{J_m} \gamma_{jm}I(x \in R_{jm})
+    F_m(x) = F_{m-1}(x) + \nu\sum_{j=1}^{J_m} \gamma_{jm}I(x \in R_{jm})
     \end{equation}
     \\]
-3. Output $F(x) = F_M(x)$
+    where $0 <\nu \leq 1$ is the learning rate
+3. Output $F(x) = F_M(x)$.
 
 
 <br>
