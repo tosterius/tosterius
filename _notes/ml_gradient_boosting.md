@@ -13,6 +13,9 @@ a good model, by adding _weak models_ to composite model
 - GB adds one weak model at a time
 - each next weak model is designed to reconstruct the residual 
 
+#### Gradient boosting for Regression
+
+
 
 <br>
 #### Links
