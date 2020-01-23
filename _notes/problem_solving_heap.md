@@ -9,9 +9,9 @@ headline:
 Binary heap is based on _complete_ binary tree. All the nodes of a max-heap (or min-heap) follow the property
 that the key of a node is larger than or equal (or less than or equal to) to the keys of it's children nodes.
 
-We represent $$N$$-element heap as array $$pq$$ of length $$N+1$$. The parent of the node in position
-$$i$$ is in position $$\lfloor \frac{i}{2} \rfloor$$. The children of the node in postion $$i$$ are in positions
-$$2i$$ and $$2i + 1$$.
+We represent $N$-element heap as array $pq$ of length $N+1$. The parent of the node in position
+$i$ is in position $\lfloor \frac{i}{2} \rfloor$. The children of the node in postion $i$ are in positions
+$2i$ and $2i + 1$.
 
 __Note:__ <span style="background-color:#ddd">STL PriorityQueue is implemented using max-heap</span>
 
@@ -51,7 +51,7 @@ void sink(std::vector<int> &pq, int k, int n)
 }
 {% endhighlight %}
 
-Both of them are $$O(log(n))$$.
+Both of them are $O(log(n))$.
 
 <br>
 ### Building a heap
@@ -64,7 +64,7 @@ void build_heap(std::vector<int> &pq, int n)
         sink(pq, i);
 }
 {% endhighlight %}
-Complexity is $$O(n)$$ (fewer than $$2n$$ compares and fewer than $$n$$ exchanges).
+Complexity is $O(n)$ (fewer than $2n$ compares and fewer than $n$ exchanges).
 
 <br>
 ### Insertion and removing the maximum (minimum)
@@ -95,7 +95,7 @@ int delete_max(std::vector<int> &pq, int n)
 }
 {% endhighlight %}
 
-Both of them are $$O(log(n))$$.
+Both of them are $O(log(n))$.
 
 <br>
 ### Heapsort
@@ -113,6 +113,6 @@ int heapsort(std::vector<int> &pq) // size = n + 1
 }
 {% endhighlight %}
 
-Complexity is $$O(n log(n))$$. Heapsort has poor cache performance.
+Complexity is $O(n log(n))$. Heapsort has poor cache performance.
 
 

@@ -12,11 +12,11 @@ comments : False
 **Prerequisites**:
 
 - Pretrained CNN is finetuned on our data
-- _Selective search_ algorithm (segmentation $$\Rightarrow$$ the similar regions are combined to form a larger segments (based on color similarity, texture similarity, size similarity)
+- _Selective search_ algorithm (segmentation $\Rightarrow$ the similar regions are combined to form a larger segments (based on color similarity, texture similarity, size similarity)
 
 **Workflow**:
 
-1. Propose category-independent ROIs using a selective search algorithm ($$\approx2000$$ regions are proposed)
+1. Propose category-independent ROIs using a selective search algorithm ($\approx2000$ regions are proposed)
 2. ROIs are warped to have a fixed size so that they can match the CNN input size
 3. Run CNN forward propagation for each warped region
 4. Output feature vectors are then used in a binary SVM trained for each class independently to classify objects and background
@@ -25,7 +25,7 @@ The linear regression model learns scale-invariant transformation between two ce
 
 **Disadvantages:**
 
-- Very slow ($$2000$$ proposals $$\Rightarrow$$ for $$N$$ images produces $$ 2000N $$ ROIs)
+- Very slow ($2000$ proposals $\Rightarrow$ for $N$ images produces $ 2000N $ ROIs)
 - It is combination of three models
 
 ![rcnn]({{ site.baseurl }}/assets/img/blog/rcnn.png)

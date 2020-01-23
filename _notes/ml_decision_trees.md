@@ -29,7 +29,7 @@ two or more subnodes. Splitting criteria (metric) is different for classificatio
 S = -\sum_{i}^C p_i log_2(p_i),
 \end{equation}
 \\]
-where $$C$$ is the number of classes, $$p_i$$ is the probability to pick an element of class $$i$$.
+where $C$ is the number of classes, $p_i$ is the probability to pick an element of class $i$.
 It can be interpreted as measure of uncertainty or randomness in data.
 
 
@@ -91,8 +91,8 @@ Gini index is a measure of particular element being wrongly classified when it i
 G = 1 - \sum^{C}_{i=1}p_i^2
 \end{equation}
 \\]
-where $$p_i$$ is the probability of object being classified to a particular class.
-It is easy to see that $$G=0$$ if all observations belong to the same class (label).
+where $p_i$ is the probability of object being classified to a particular class.
+It is easy to see that $G=0$ if all observations belong to the same class (label).
 Gini Index and Entropy can be used interchangeably.
 
 Gini based splitting favors larger partitions. Entropy  that have small counts but many distinct values.
@@ -121,7 +121,7 @@ Let us consider, as an example how the amount of fertilizers influence growth ra
 ![decision_tree_3]({{ site.baseurl }}/assets/img/notes/decision_tree_explanation_3.png)
 
 Consider very simple decision tree that splits our measurements into two groups based on
-whether or not $$x < 1.5$$. The average growth rate on the left is $$2$$. The average growth rate on the right side is $$6$$.
+whether or not $x < 1.5$. The average growth rate on the left is $2$. The average growth rate on the right side is $6$.
 These two values are the predictions that our decision tree will make.
 
 To quantify the quality of these predictions we will calculate the sum of squared residuals
@@ -148,13 +148,13 @@ F(x) = \sum_{m-1}^{M}c_m I(x \in R_m)
 \end{equation}
 \\]
 
-where $$c_m$$ is the response in $$m$$-th region. $$I$$ indicates that $$x$$ belongs to the region $$R_m$$.
+where $c_m$ is the response in $m$-th region. $I$ indicates that $x$ belongs to the region $R_m$.
 
 To build regression tree we recursively apply the same procedure for observations that ended up in the node to the left and right of the root.
 
 
 <!-- In other words algorithm decides on the splitting variables and split points. So if we have
- a partition in $$M$$ regions $$R_1, R_2, \dots, R_M$$  -->
+ a partition in $M$ regions $R_1, R_2, \dots, R_M$  -->
 
 #### How to prevent overfitting. Prunining regression trees.
 
@@ -170,22 +170,22 @@ We define _cost complexity_ criteria or _tree score_:
 C(T) = SSR + \alpha |T|
 \end{equation}
 \\]
-where $$SSR$$ is the sum of squared residuals, $$\alpha >= 0$$ - tunning parameter (we
+where $SSR$ is the sum of squared residuals, $\alpha >= 0$ - tunning parameter (we
 find it using cross-validation).
-$$|T|$$ - the number of terminal nodes or leaves in tree $$T$$.
+$|T|$ - the number of terminal nodes or leaves in tree $T$.
 
-The idea is to find, for each $$\alpha$$ a subtree to minimize $$C(T)$$.
+The idea is to find, for each $\alpha$ a subtree to minimize $C(T)$.
 
 To do that do the following steps:
 
 1. build the full sized regression tree by fitting it on all of the data (not just the training data).
-   (increase $$\alpha$$ until pruning leaves will give us a lower _tree score_ and use the resulting subtree) $$\times N$$.
-   In the end different values of $$\alpha$$ give us a sequence of trees, from full sized to just a leaf
+   (increase $\alpha$ until pruning leaves will give us a lower _tree score_ and use the resulting subtree) $\times N$.
+   In the end different values of $\alpha$ give us a sequence of trees, from full sized to just a leaf
    ![rtree_pruning_0]({{ site.baseurl }}/assets/img/notes/rtree_pruning_0.png)
    
-2. split data into training and validation data sets. Just using the training data use the $$\alpha$$ values we found before to build a full
-   tree and a sequence of sub-trees that minimize the _tree score_. Use the validation data to calculate the $$SSR$$s for each new tree. 
-   10-fold cross-validation. The __final__ value of $$\alpha$$, on average, gives us the lowest $$SSR$$ with the validation data.
+2. split data into training and validation data sets. Just using the training data use the $\alpha$ values we found before to build a full
+   tree and a sequence of sub-trees that minimize the _tree score_. Use the validation data to calculate the $SSR$s for each new tree. 
+   10-fold cross-validation. The __final__ value of $\alpha$, on average, gives us the lowest $SSR$ with the validation data.
 3. go back to the trees from 1 and pick the tree that corresponds to the final value from 2
 
 <br>

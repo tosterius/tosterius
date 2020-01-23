@@ -16,11 +16,11 @@ a good model, by adding _weak models_ to composite model
 <br>
 #### Gradient boosting for Regression
 
-We are given a $$n$$-element data set $$\{(x_i, y_i)\}, i = 0 \dots n$$ and differentiable loss function $$L(y_i, F(x_i))$$.
-$$F_m$$ is some imperfect model at the stage $$m$$.
+We are given a $n$-element data set $\{(x_i, y_i)\}, i = 0 \dots n$ and differentiable loss function $L(y_i, F(x_i))$.
+$F_m$ is some imperfect model at the stage $m$.
 
-1. Let $$F_0(X)$$ be value $$\nu$$ minimizing $$L(y_i, \nu)$$ across all observations
-2. For $$m = 1 \dots M $$:
+1. Let $F_0(X)$ be value $\nu$ minimizing $L(y_i, \nu)$ across all observations
+2. For $m = 1 \dots M $:
     1. Compute the 
     \\[
     \begin{equation}

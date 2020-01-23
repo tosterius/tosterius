@@ -9,7 +9,7 @@ picture:
 
 #### 1. Bernoulli Distribution
 The Bernoulli distribution is the discrete probability distribution of a random variable which takes a binary output:
- $$1$$ with probability $$p$$, and $$0$$ with probability $$(1-p)$$. 
+ $1$ with probability $p$, and $0$ with probability $(1-p)$. 
 
 \\[
 \begin{equation}
@@ -27,9 +27,9 @@ Example: flipping a coin one time.
 <br>
 #### 2. Binomial distribution
 
-- $$n$$ independent experiments are performed
-- each experiment results in $$1$$ with probability $$p$$ and $$0$$ with probability $$1 − p$$. 
-- the total number of successes, $$k$$, is a binomial random variable with parameters $$n$$ and $$p$$
+- $n$ independent experiments are performed
+- each experiment results in $1$ with probability $p$ and $0$ with probability $1 − p$. 
+- the total number of successes, $k$, is a binomial random variable with parameters $n$ and $p$
 \\[
 \begin{equation}
 p(k) = C_k^n p^k (1-p)^{n-k}
@@ -41,15 +41,15 @@ E(x) = np, \; V(x) = np(1 - p)
 \end{equation}
 \\]
 
-Example: flipping a coin $$n$$ times. What is the probability of getting $$k$$ heads?
+Example: flipping a coin $n$ times. What is the probability of getting $k$ heads?
 
 <br>
 #### 3. Poisson distribution and Poisson process
 
 The Poisson distribution can be derived as the limit of a binomial distribution as
-the number of trials, $$n$$, approaches infinity and the probability of success on each trial,
-$$p$$, approaches zero in such a way that $$np = \lambda$$. **In other word the Poisson frequency 
-function is used to approximate binomial probabilities for large $$n$$ and small $$p$$**.
+the number of trials, $n$, approaches infinity and the probability of success on each trial,
+$p$, approaches zero in such a way that $np = \lambda$. **In other word the Poisson frequency 
+function is used to approximate binomial probabilities for large $n$ and small $p$**.
 
 \\[
 \begin{equation}
@@ -66,8 +66,8 @@ A Poisson Process is a model for a series of discrete event where the average ti
 but the exact timing of events is random. The arrival of an event is independent of the event before.
 (Poisson random variable also applies to disjoint regions of space.)
 
-We observe $$k$$ events in a time period given the length of the period and the average events per time
-$$\lambda$$ is an expected number of events in interval (or region of space):
+We observe $k$ events in a time period given the length of the period and the average events per time
+$\lambda$ is an expected number of events in interval (or region of space):
 
 \\[
 \begin{equation}
@@ -102,7 +102,7 @@ f(x) = \frac{1} {\sigma\sqrt{2\pi}} e^{-(x - \mu)^{2}/(2\sigma^{2}) }
 E(x) = \mu, \; V(x) = \sigma
 \end{equation}
 \\]
-The notation $$N(\mu, \sigma^2)$$ means normally distributed with mean $$\mu$$ and variance $$\sigma$$.
+The notation $N(\mu, \sigma^2)$ means normally distributed with mean $\mu$ and variance $\sigma$.
 
 
 - Many classical statistical tests are based on the assumption that the data follow a normal distribution. This assumption should be tested before applying these tests.
