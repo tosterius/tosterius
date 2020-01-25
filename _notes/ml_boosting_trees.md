@@ -38,7 +38,7 @@ important
     \alpha_t = \frac{1}{2}\ln (\frac{1-\epsilon_t}{\epsilon_t}) \tag{1}\label{eq1}
     \end{equation}
     \\]
-    It defines how much say classifier $h_t$ has in final classificaion.
+    It defines how much say classifier $h_t$ has in final classification.
 
     5. Update weights of samples. For $i=1,\dots, m$:
     \\[
@@ -47,7 +47,7 @@ important
     \end{equation}
     \\]
 where $Z_t$ is a normalization factor (chosen so that $D_{t+1}$ will be a distribution).
-4. Final hyphotesis:
+4. Final hypothesis:
 \\[
 \begin{equation}
 H(x) = sign(\sum_{t=1}^T \alpha_t h_t(x)) \tag{3}\label{eq3}
@@ -56,12 +56,12 @@ H(x) = sign(\sum_{t=1}^T \alpha_t h_t(x)) \tag{3}\label{eq3}
 
 <br>
 The most interesting part is in step 3.1. To create the first stump in the forest
-we start with finding the feature that does the best classificaion of our samples.
+we start with finding the feature that does the best classification of our samples.
 For instance, if our dataset contains four features, we determine which one 
 is the best by creating four stumps. Then we calculate the Gini index for these
 four stumps and select the stump with the lowest value of Gini index as the first
 stump of the forest.
-Now we need to determine the stumps’s weight in final classificaion, this is done by calculating
+Now we need to determine the stumps weight in final classification, this is done by calculating
 it's total misclassification error:
 \\[
 \begin{equation}
@@ -69,7 +69,7 @@ it's total misclassification error:
 \end{equation}
 \\]
 and substituting the result into $(\ref{eq1})$.
-Since all weighths add up to $1$ the misclassification error $\epsilon_t$ is between $0$ for perfect stump
+Since all weights add up to $1$ the misclassification error $\epsilon_t$ is between $0$ for perfect stump
 and $1$ for worst stump. We finish the first iteration by updating the weights of samples. To compute the expression 
 $(\ref{eq2})$ we first compute the expression in numerator and then sum up the result values to get normalization 
 coefficient $Z_t$.
@@ -77,7 +77,7 @@ coefficient $Z_t$.
 In the picture below there is a graph of $\exp(-\alpha_t y_i h_t(x_i))$ depending on the sign of $y_i h_t(x_i)$.
 ![adaboost_0]({{ site.baseurl }}/assets/img/notes/adaboost_0.png)
 It easy to see when the value of $y_i h_t(x_i)$ is positive i.e. the signs of both ground truth value $y_i$ and 
-hyphothesis $h_t(x_i)$ match, then we scale the previous sample with small number and vice versa.
+hypothesis $h_t(x_i)$ match, then we scale the previous sample with small number and vice versa.
 
 <br>
 #### Links

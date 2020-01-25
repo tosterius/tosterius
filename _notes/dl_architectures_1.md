@@ -17,7 +17,7 @@ Resnets solve this problem, namely vanishing gradient problem.
 Let us focus on a local neural network with desired mapping $$H(x)$$.
 We let this network fit another mapping $$F(x) = H(x) - x$$. The original mapping is recast into $$F(x) + x$$.
 
-Author's hyphothesis is that __it is easier to optimize this residual mapping $$F(x)$$ than to optimize the original unreferenced mapping $$H(s)$$.__
+Author's hypothesis is that __it is easier to optimize this residual mapping $$F(x)$$ than to optimize the original unreferenced mapping $$H(s)$$.__
 
 Formally building block (or _residual unit_) performs the following computation:
 
