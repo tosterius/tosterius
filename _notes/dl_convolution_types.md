@@ -2,7 +2,7 @@
 layout: note # You can ommit this if you've set it as a default
 title: "Convolution types: transposed convolution and dilated convolution"
 category: DL
-index: 2
+index: 3
 headline: 
 picture: 
 ---

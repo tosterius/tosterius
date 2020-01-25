@@ -2,7 +2,7 @@
 layout: note
 title: "Regularization in neural networks"
 category: DL
-index: 1
+index: 2
 headline: 
 picture: 
 ---

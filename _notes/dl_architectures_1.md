@@ -2,7 +2,7 @@
 layout: note
 title: "Popular architectures"
 category: DL
-index: 2
+index: 4
 headline: "Resnet, Inception"
 picture: 
 ---
