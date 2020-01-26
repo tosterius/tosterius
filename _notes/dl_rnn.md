@@ -17,16 +17,23 @@ sequence.
 
 \\[
 \begin{split}
-&s^{(t)} = W_{aa} a^{(t-1)} + W_{aw}x^t + b_a \\\\\\\\
-&o^{(t)} = W_{ay} a^{(t)} + b_y \\\\\\\\ \
-&a^{(t)} = f(s^{(t)}) \\\\\\\\
-&y^{(t)} = g(o^{(t)})
+&a^{(t)} = W_{hh} h^{(t-1)} + W_{xh}x^{(t)} + b_h \\\\\\\\
+&o^{(t)} = W_{hy} a^{(t)} + b_y \\\\\\\\ \
+&h^{(t)} = f(a^{(t)}) \\\\\\\\
+&z^{(t)} = g(o^{(t)})
 \end{split}
 \tag{1}\label{eq1}
 \\]
+
+Where
+- $x^{(t)}$ is the input at time step $t$
+- $h^{(t)}$ is the hidden state at time step $t$
+- $o^{(t)}$ is the intermediate term. Used to calculate $z^{(t)}$
+- $z^{(t)}$ is the prediction at the time step $t$ 
 
 
 #### Links
 
 1. [Recurrent Neural Networks cheatsheet](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks#overview)
 2. [IRecurrent Neural Networks Tutorial](http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/)
+3. [On the difficulty of training recurrent neural networks](http://proceedings.mlr.press/v28/pascanu13.pdf)
