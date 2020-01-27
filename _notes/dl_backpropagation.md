@@ -93,3 +93,9 @@ __Rate of change of the cost function with respect to a bias in network:__
 \\]
 
 Equations $(\ref{eq3})$, $(\ref{eq6})$, $(\ref{eq7})$, $(\ref{eq8})$ are fundamental equations of backpropagation.
+
+
+#### Links
+
+1. [How the backpropagation algorithm works](http://neuralnetworksanddeeplearning.com/chap2.html)
+2. [Calculus on Computational Graphs: Backpropagation](http://colah.github.io/posts/2015-08-Backprop/)
