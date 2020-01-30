@@ -45,6 +45,7 @@ If our loss function is SSR then $\gamma$ is just the mean of $y_1,\dots y_n$.
     \gamma_{jm} = \arg\min_{\gamma} \sum_{x_i \in R_{jm}} L(y_i, f_{m-1}(x_i) + \gamma)
     \end{equation}
     \\]
+    This step is similar to the very first step: we just need to determine the output value for each leaf 
     4. Update
     \\[
     \begin{equation}
