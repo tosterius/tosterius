@@ -1,7 +1,7 @@
 ---
 layout: note
 title: "Basics of statistics"
-category: "Statistics"
+category: "Math"
 index: 0
 headline:
 picture:
