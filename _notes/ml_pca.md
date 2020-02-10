@@ -171,3 +171,4 @@ Principal components are given by $\mathbf A \mathbf V = \mathbf U \mathbf \Sigm
 3. [Deep Learning Book Series · 2.8 Singular Value Decomposition](https://hadrienj.github.io/posts/Deep-Learning-Book-Series-2.8-Singular-Value-Decomposition/)
 4. [Foundations of Data Science, Avrim Blum, John Hopcroft, and Ravindran Kannan](https://www.cs.cmu.edu/~venkatg/teaching/CStheory-infoage/book-chapter-4.pdf)
 5. [Relation Between SVD and PCA](https://intoli.com/blog/pca-and-svd/)
+6. [Lecture 9: SVD, Low Rank Approximation](https://courses.cs.washington.edu/courses/cse521/16sp/521-lecture-9.pdf)

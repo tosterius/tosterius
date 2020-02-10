@@ -84,3 +84,4 @@ hypothesis $h_t(x_i)$ match, then we scale the previous sample with small number
 
 - [Explaining AdaBoost, Robert E. Schapire](http://rob.schapire.net/papers/explaining-adaboost.pdf)
 - [StatQuest with Josh Starmer: AdaBoost, Clearly Explained](https://www.youtube.com/watch?v=LsK-xG1cLYA&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=43)
+- [Gradient boosting performs gradient descent](https://explained.ai/gradient-boosting/descent.html)
