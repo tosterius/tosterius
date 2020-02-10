@@ -2,7 +2,7 @@
 layout: note
 title: Random Forests
 category: ML
-index: 4
+index: 5
 headline:
 picture:
 ---

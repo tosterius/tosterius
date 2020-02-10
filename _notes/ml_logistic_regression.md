@@ -2,7 +2,7 @@
 layout: note
 title: Logistic Regression
 category: ML
-index: 1
+index: 2
 headline: 
 picture:
 ---

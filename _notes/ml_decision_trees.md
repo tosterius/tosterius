@@ -2,7 +2,7 @@
 layout: note
 title: Decision Trees
 category: ML
-index: 3
+index: 4
 headline:
 picture:
 ---

@@ -2,7 +2,7 @@
 layout: note
 title: Boosting and Additive Trees. AdaBoost.
 category: ML
-index: 5
+index: 6
 headline:
 picture:
 ---

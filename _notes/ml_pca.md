@@ -2,7 +2,7 @@
 layout: note
 title: Singular Value Decomposition (SVD). Principal Component Analysis (PCA).
 category: ML
-index: 6
+index: 8
 headline:
 picture:
 ---
