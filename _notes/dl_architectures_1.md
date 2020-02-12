@@ -8,16 +8,19 @@ picture:
 ---
 
 ### Resnet
+
+##### Resnet module
+
 With the network depth increasing accuracy gets saturated and it is not a problem of overfitting, as it might first appear.
 In simple words if we add some additional layers to pretraied network, new bigger network should work as good as the shallow or even better.
 Resnets solve this problem, namely vanishing gradient problem.
 
 ![resnet_idea]({{ site.baseurl }}/assets/img/notes/resnet_idea.png)
 
-Let us focus on a local neural network with desired mapping $$H(x)$$.
-We let this network fit another mapping $$F(x) = H(x) - x$$. The original mapping is recast into $$F(x) + x$$.
+Let us focus on a __local__ (a few layers of a network) neural network with desired mapping $H(x)$.
+We let this network fit another mapping $F(x) = H(x) - x$. The original mapping is recast into $F(x) + x$.
 
-Author's hypothesis is that __it is easier to optimize this residual mapping $$F(x)$$ than to optimize the original unreferenced mapping $$H(s)$$.__
+Author's hypothesis is that __it is easier to optimize this residual mapping $F(x)$ than to optimize the original unreferenced mapping $H(s)$.__
 
 Formally building block (or _residual unit_) performs the following computation:
 
@@ -29,10 +32,10 @@ Formally building block (or _residual unit_) performs the following computation:
 \tag{1}\label{eq1}
 \\]
 
-where $$f$$ is activation function, $$W_l$$ is weights matrix of the layer $$l$$.
+where $f$ is activation function, $W_l$ is weights matrix of the layer $l$.
 
-We see that dimensions of $$x_l$$ and $$F$$ must be equal. If this is not the case we perform
-linear projection $$A$$ which can be trainable or simply pad 0s to $$x_l$$.
+We see that dimensions of $x_l$ and $F$ must be equal. If this is not the case we perform
+linear projection $A$ which can be trainable or simply pad 0s to $x_l$.
 
 \\[
 \begin{equation}
@@ -49,7 +52,7 @@ y_l = h(x_l) + F(x_l, W_l)
 and they showed by experiments that the identity mapping is sufficient for addressing this problem.
 
 ##### Analysis
-Let us take as activation function $$f(x) = ReLU(x)$$:
+Let us take as activation function $f(x) = ReLU(x)$:
 \\[
 \begin{equation}
 x_{l+1} = x_l + F(x_l, W_l)
@@ -62,19 +65,30 @@ x_{L} = x_l + \sum_{i=l}^{i=L-1}F(x_i, W_i)
 \end{equation}
 \\]
 
-Denoting loss functions as $$C$$, from the chain rule of backpropagation we get:
+Denoting loss functions as $C$, from the chain rule of backpropagation we get:
 \\[
 \begin{equation}
 \frac{\partial C}{\partial x_l} = \frac{\partial C}{\partial x_L} \frac{\partial x_L}{\partial x_l} = 
 \frac{\partial C}{\partial x_L} (1 + \frac{\partial}{\partial x_l} \sum_{i=l}^{i=L-1}F(x_i, W_i) )
 \end{equation}
 \\]
-We see that the term of $$\frac{\partial C}{\partial x_L}$$ ensures that information is
-directly propagated back to any shallower unit $$l$$.  And it is suggested it is unlikely that the gradient
-$$\frac{\partial C}{\partial x_L}$$ to be canceled out for minibatch, because in general term 
-$$\sum_{i=l}^{i=L-1}F(x_i, W_i)$$ cannot be always $$-1$$ for all samples in minibatch [2].
+We see that the term of $\frac{\partial C}{\partial x_L}$ ensures that information is
+directly propagated back to any shallower unit $l$.  And it is suggested it is unlikely that the gradient
+$\frac{\partial C}{\partial x_L}$ to be canceled out for minibatch, because in general term 
+$\sum_{i=l}^{i=L-1}F(x_i, W_i)$ cannot be always $-1$ for all samples in minibatch [2].
 
-#### Inception
+### Inception
+
+##### Inception module
+
+- $1\times 1$ convolutions to decrease number of channels
+- $1\times 1$, $3\times 3$, $5\times 5$ filters to extract features at different scales
+- average pooling layers
+- auxiliary predictions and combined loss
+
+![inception_0]({{ site.baseurl }}/assets/img/notes/inception_0.png)
+![inception_1]({{ site.baseurl }}/assets/img/notes/inception_1.png)
+
 
 
 #### Links
