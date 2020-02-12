@@ -79,7 +79,7 @@ $\sum_{i=l}^{i=L-1}F(x_i, W_i)$ cannot be always $-1$ for all samples in minibat
 
 ### Inception
 
-##### Inception module
+##### Inception v1 module
 
 - $1\times 1$ convolutions to decrease number of channels
 - $1\times 1$, $3\times 3$, $5\times 5$ filters to extract features at different scales
@@ -88,8 +88,22 @@ $\sum_{i=l}^{i=L-1}F(x_i, W_i)$ cannot be always $-1$ for all samples in minibat
 
 ![inception_0]({{ site.baseurl }}/assets/img/notes/inception_0.png)
 ![inception_1]({{ site.baseurl }}/assets/img/notes/inception_1.png)
+inception_v2_1.png
+##### Inception v2 module
+
+![inception_2_v2]({{ site.baseurl }}/assets/img/notes/inception_2_v2.png)
 
 
+
+- batch normalization
+- factorize 5x5 convolution to two 3x3 
+- $n \times n$ convolutions are decomposed into $n \times 1$ and $1 \times n$
+
+
+##### Inception v3 module
+- increased network input size $224 \times 224$ to $299 \times 299$
+- convolution with stride 2 and max-polling layers are combined in one layer + depth concatenation
+- only 1 auxiliary classifier is used
 
 #### Links
 
