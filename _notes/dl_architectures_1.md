@@ -109,3 +109,4 @@ inception_v2_1.png
 
 1. [Deep Residual Learning for Image Recognition](https://arxiv.org/pdf/1512.03385.pdf)
 2. [Identity Mappings in Deep Residual Networks](https://arxiv.org/pdf/1603.05027.pdf)
+3. [Rethinking the Inception Architecture for Computer Vision](https://arxiv.org/pdf/1512.00567v3.pdf)
