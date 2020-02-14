@@ -13,7 +13,7 @@ Support Vector Machine performs classification by finding the _optimal separatin
  that maximizes the _margin_ between the two classes (OSH is as far as possible from the data points of each category).
 
 We are given a set of data points $\\{(\mathbf{x}_1, y_1), \dots (\mathbf{x}_n, y_n)\\}$, where $y_i \in \\{-1, 1\\}$ and
-$\mathbf{x}_i$ are vectors (usually normalized). 
+$\mathbf{x}_i$ are vectors (usually normalized). We are looking for hypothesis $h(\mathbf{x}) = sign(\mathbf{w}^T\mathbf{x}-b)$.
 
 A hyperplane can be defined by
 \\[
@@ -42,15 +42,67 @@ The distance between these two hyperplane is $\frac{2}{\Arrowvert \mathbf{w} \Ar
 
 (proof: $d = proj_{\mathbf{w}}\mathbf{c} = \frac{\mathbf{w} \cdot \mathbf{c}}{\Arrowvert \mathbf{w} \Arrowvert} = \frac{(\mathbf{B} - \mathbf{A})\cdot \mathbf{w}}{\Arrowvert \mathbf{w} \Arrowvert} = \frac{(\mathbf{B}\mathbf{w} - \mathbf{A}\mathbf{w})}{\Arrowvert \mathbf{w} \Arrowvert} = \frac{b+1 -b+1}{\Arrowvert \mathbf{w} \Arrowvert} = \frac{2}{\Arrowvert \mathbf{w} \Arrowvert}$)
 
+The margin is given by $M = y(\mathbf{w}^T \mathbf{x}-b)$. $M$ is negative only if the model 
+misclassifies an object.
+
 Now we can define an optimization problem to find optimal margin classifier:
 
 \\[
 \begin{split}
-&\Arrowvert \mathbf{w} \Arrowvert \rightarrow min \\\\\\
+&\frac{1}{2}\Arrowvert \mathbf{w} \Arrowvert \rightarrow min \\\\\\
 &y(\mathbf{w}^T \mathbf{x}-b) \geqslant 1
 \end{split} \tag{2}\label{eq2}
 \\]
 
+To solve this optimization problem we recast it in dual form.
+The Lagrangian function is defined as
+\\[
+\begin{equation}
+L(\mathbf{w},b,\alpha)=\frac{1}{2}\Arrowvert \mathbf{w} \Arrowvert^2-\sum_{i=1}^{m}{\alpha_i[y_i(\mathbf{w}\cdot \mathbf{x_i} - b)-1]} \tag{3}\label{eq3}
+\end{equation}
+\\]
+and the Lagrangian primal problem
+
+\\[
+\begin{split}
+&\min_{\mathbf{w},b}\space \max L(\mathbf{w},b,\alpha) \\\\\\
+&subject \space to \space \alpha_i \ge 0, i=1\dots m
+\end{split} \tag{4}\label{eq4}
+\\]
+
+Calculating the derivatives of Lagrangian  and assuming them to be a zero we get:
+
+\\[
+\begin{split}
+&\nabla_w L(\mathbf{w},b,\alpha) = \mathbf{w} - \sum_{i=1}^{m}{\alpha_iy_i \mathbf{x_i}}=0 \\\\\\
+&\nabla_b L(\mathbf{w},b,\alpha) = -\sum_{i=1}^{m}{\alpha_iy_i}=0
+\end{split} \tag{5}\label{eq5}
+\\]
+
+From the above two equations, we get $\mathbf{w}=\sum_{i=1}^{m}{\alpha_iy_i\mathbf{x_i}}$. Substituting 
+it to  $(\ref{eq3})$ we get
+\\[
+\begin{equation}
+W(\alpha)= \sum_{i=1}^m\alpha_i -\frac{1}{2}\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_j(\mathbf{x_i}\cdot \mathbf{x_j}) \tag{6}\label{6}
+\end{equation}
+\\]
+
+The dual problem is thus stated as:
+
+\\[
+\begin{split}
+&\max_\alpha \sum_{i=1}^m\alpha_i -\frac{1}{2}\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_j(\mathbf{x_i}\cdot \mathbf{x_j}) \\\\\\
+& subject\space to\space \alpha_i \ge 0, i=1\dots m, \sum_{i=1}^m{a_iy_i}=0
+\end{split} \tag{7}\label{eq7}
+\\]
+
+Solving the last problem we get $\alpha_i$. Now we can calculate $\mathbf{w}=\sum_{i=1}^{m}{\alpha_iy_i\mathbf{x_i}}$ 
+and $b = \frac{1}{S}\sum_{i=1}^S(y_i-\mathbf{w}\cdot \mathbf{x_i})$, where $S$ is the number of support vectors.
+
+
+<br>
 ####  Linearly inseparable data (soft-margin)
+
+![svm_insep]({{ site.baseurl }}/assets/img/notes/svm_insep.png)
 
 ### Nonlinear classification. Kernel trick
