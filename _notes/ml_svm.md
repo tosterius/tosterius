@@ -106,3 +106,9 @@ and $b = \frac{1}{S}\sum_{i=1}^S(y_i-\mathbf{w}\cdot \mathbf{x_i})$, where $S$ i
 ![svm_insep]({{ site.baseurl }}/assets/img/notes/svm_insep.png)
 
 ### Nonlinear classification. Kernel trick
+
+<br>
+#### Links 
+
+1. [Understanding the mathematics behind Support Vector Machines](https://shuzhanfan.github.io/2018/05/understanding-mathematics-behind-support-vector-machines/)
+2. [Support Vector Machine - Classification (SVM)](https://www.saedsayad.com/support_vector_machine.htm)
