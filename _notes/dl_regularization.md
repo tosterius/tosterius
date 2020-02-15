@@ -7,3 +7,4 @@ headline:
 picture: 
 ---
 
+Regularization is a technique designed to counter over-fitting.

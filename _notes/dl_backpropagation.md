@@ -95,6 +95,33 @@ __Rate of change of the cost function with respect to a bias in network:__
 Equations $(\ref{eq3})$, $(\ref{eq6})$, $(\ref{eq7})$, $(\ref{eq8})$ are fundamental equations of backpropagation.
 
 
+#### Vanishing gradients problem
+
+As more layers are added to a network, the gradients of a loss function approaches zero.
+In practice we can observe that layers closest to the output of the network  learn faster then
+deeper layers.
+
+On the picture below is an example of simple 4-neuron network.
+
+![vanishing_gradients]({{ site.baseurl }}/assets/img/notes/vanishing_gradients.png)
+
+Let us calculate the gradient $\frac{\partial E}{\partial w^1}$:
+
+\\[
+\begin{equation}
+\frac{\partial E}{\partial w^1} = \frac{\partial E}{\partial a^4} \frac{\partial a^4}{\partial z^4} \frac{\partial z^4}{\partial a^3} \frac{\partial a^3}{\partial z^3} \frac{\partial z^3}{\partial a^2} \frac{\partial a^2}{\partial z^2} \frac{\partial z^2}{\partial a^1} \frac{\partial a^1}{\partial z^1},
+\end{equation}
+\\]
+
+\\[
+\begin{equation}
+\frac{\partial E}{\partial w^1} = \frac{\partial E}{\partial a^4} \sigma'(z^4) w^4 \sigma'(z^3) w^3 \sigma'(z^2) w^2 \sigma'(z^1)
+\end{equation}
+\\]
+
+The maximum of the derivative of the sigmoid function is $0.25$. If the weights $w^i$ are less than $1$ the right
+side of equation will exponentially decrease. 
+
 #### Links
 
 1. [How the backpropagation algorithm works](http://neuralnetworksanddeeplearning.com/chap2.html)
