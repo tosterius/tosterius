@@ -37,10 +37,16 @@ FalsePositiveRate = 1 - Specificity = \frac{Fp}{Tn + Fp}
 Here is an example how Logistic Regression curve. Changing the threshold
 leads to different Confusion Matrices and respectively to different FPR and TPR.
 
+#### Mean Average Precision (mAP)
+
+_mAP_ is popular metric in object detection and instance segmentation problems.
+
+_Average Precision is the area under precision-recall curve. To get multiple precision-recall
+pairs in case of instance segmentation and object detection IoU is calculated using different thresholds.
+mAP is just AP values averaged over different categories.
+
 
 <br>
 #### Links
 
-- [Implementing Decision Tree From Scratch in Python](https://medium.com/@penggongting/implementing-decision-tree-from-scratch-in-python-c732e7c69aea)
-
-- [Decision Tree Flavors: Gini Index and Information Gain](http://www.learnbymarketing.com/481/decision-tree-flavors-gini-info-gain/)
+- [The Confusing Metrics of AP and mAP for Object Detection](https://mc.ai/the-confusing-metrics-of-ap-and-map-for-object-detection/)
