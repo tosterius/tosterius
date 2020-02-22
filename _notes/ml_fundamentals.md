@@ -15,6 +15,10 @@ Accuracy = \frac{Tp + Tn}{P + N}
 \end{equation}
 
 \begin{equation}
+Precision = \frac{Tp}{Tp + Fp}
+\end{equation}
+
+\begin{equation}
 Recall = TruePositiveRate = Sensitivity = \frac{Tp}{Tp + Fn}
 \end{equation}
 
