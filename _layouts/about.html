@@ -51,6 +51,17 @@ layout: page
         {% endfor %}
       </ul>
     </article>
+    <article class="exper col-12 col-md-6">
+      <p class="title">EDUCATION</p>
+      <ul class="exper-list">
+        {% for exp in  profile.education %}
+        <li class="meta">
+          <p class="date">{{ exp.start }} ~ {{ exp.end }}</p>
+          <p class="description">{{ exp.education }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </article>
   </section>
 
   {% include projects.html %}

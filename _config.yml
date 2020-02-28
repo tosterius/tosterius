@@ -13,6 +13,9 @@ theme_settings :
     username : Arthur Yalaletdinov
     description : Software engineer
     experience :
+      - start : 2019-06
+        end : now
+        experience : Zhara music
       - start : 2017-09
         end : 2019-06
         experience : SpritDSP
@@ -22,12 +25,23 @@ theme_settings :
       - start : 2014-04
         end : 2015-07
         experience : Institute for System Programming of the Russian Academy of Sciences
+    education :
+      - start : 2006-09
+        end : 2012-02
+        education : Moscow State University, Mathematical Physics department
+      - start : 2014-04
+        end : 2015-07
+        education : Institute for System Programming of the Russian Academy of Sciences
     skills : 
       - skill : Motivation
         value : 100  # Percent value
       - skill : C++
         value : 85  # Percent value
       - skill : Python
+        value : 75  # Percent value
+      - skill : Algorithms
+        value : 75  # Percent value
+      - skill : ML theory
         value : 75  # Percent value
         
   # Icons
