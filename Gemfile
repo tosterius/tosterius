@@ -5,3 +5,4 @@ gemspec
 gem 'github-pages'
 gem "jekyll-paginate"
 gem "html-proofer"
+gem "jekyll-last-modified-at"

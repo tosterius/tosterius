@@ -134,6 +134,9 @@ GEM
     jekyll-github-metadata (2.12.1)
       jekyll (~> 3.4)
       octokit (~> 4.0, != 4.4.0)
+    jekyll-last-modified-at (1.2.1)
+      jekyll (>= 3.7, < 5.0)
+      posix-spawn (~> 0.3.9)
     jekyll-mentions (1.5.1)
       html-pipeline (~> 2.3)
       jekyll (>= 3.7, < 5.0)
@@ -227,6 +230,7 @@ GEM
     parallel (1.19.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
+    posix-spawn (0.3.13)
     public_suffix (3.1.1)
     rainbow (3.0.0)
     rake (12.3.3)
@@ -265,6 +269,7 @@ DEPENDENCIES
   github-pages
   grape-theme!
   html-proofer
+  jekyll-last-modified-at
   jekyll-paginate
   rake (~> 12.0)
 
