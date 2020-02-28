@@ -7,13 +7,10 @@
       {% if prev[0] == "notes" %}
       <!-- note -->
       <a href="{{ site.url }}">
-          <li class="btn-nav">Blog</li>
+          <li class="btn-nav">Notes</li>
         </a>
         <a href="{{ site.url }}/tags">
-          <li class="btn-nav">Tags</li>
-        </a>
-        <a href="{{ site.url }}/notes">
-          <li class="current">Notes</li>
+          <li class="btn-nav">Random</li>
         </a>
         <a href="{{ site.url }}/about">
           <li class="btn-nav">About</li>
@@ -23,13 +20,10 @@
       {% when 'tags'%}
       <!-- tags -->
       <a href="{{ site.url }}">
-        <li class="btn-nav">Blog</li>
+        <li class="btn-nav">Notes</li>
       </a>
       <a href="{{ site.url }}/tags">
-        <li class="current">Tags</li>
-      </a>
-      <a href="{{ site.url }}/notes">
-        <li class="btn-nav">Notes</li>
+        <li class="current">Random</li>
       </a>
       <a href="{{ site.url }}/about">
         <li class="btn-nav">About</li>
@@ -37,13 +31,10 @@
       {% when 'notes'%}
       <!-- notes -->
       <a href="{{ site.url }}">
-        <li class="btn-nav">Blog</li>
+        <li class="btn-nav">Notes</li>
       </a>
       <a href="{{ site.url }}/tags">
-        <li class="btn-nav">Tags</li>
-      </a>
-      <a href="{{ site.url }}/notes">
-        <li class="current">Notes</li>
+        <li class="btn-nav">Random</li>
       </a>
       <a href="{{ site.url }}/about">
         <li class="btn-nav">About</li>
@@ -51,13 +42,10 @@
       <!-- about -->
       {% when 'about'%}
       <a href="{{ site.url }}">
-        <li class="btn-nav">Blog</li>
+        <li class="btn-nav">Notes</li>
       </a>
       <a href="{{ site.url }}/tags">
-        <li class="btn-nav">Tags</li>
-      </a>
-      <a href="{{ site.url }}/notes">
-        <li class="btn-nav">Notes</li>
+        <li class="btn-nav">Random</li>
       </a>
       <a href="{{ site.url }}/about">
         <li class="current">About</li>
@@ -65,13 +53,10 @@
       {% else %}
       <!-- others -->
       <a href="{{ site.url }}">
-        <li class="current btn-nav">Blog</li>
+        <li class="current btn-nav">Notes</li>
       </a>
       <a href="{{ site.url }}/tags">
-        <li class="btn-nav">Tags</li>
-      </a>
-      <a href="{{ site.url }}/notes">
-        <li class="btn-nav">Notes</li>
+        <li class="btn-nav">Random</li>
       </a>
       <a href="{{ site.url }}/about">
         <li class="btn-nav">About</li>

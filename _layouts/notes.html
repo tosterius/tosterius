@@ -1,16 +1,17 @@
 ---
 layout: page
 ---
+
 <div id="notes">
   <section class="bg"></section>
-  <h1 class="title">{{ page.title }}</h1>
-  
+  <h1 class="title">Notes on ML, DL and Algorithms</h1>
+
   <ul class="note-cloud">
         {% assign categories = site.notes | group_by: "category" | sort: "title" %}
         {% for category in categories %}
         <a href="#{{ category.name }}">
           <li class="note-category"
-            style="background-color: rgba(48,128,104,{{ category.size | times: 100 | divided_by: categories.size | plus: 50 | divided_by: 100.0}})">
+            style="background-color: rgba(86,61,124,{{ category.size | times: 100 | divided_by: categories.size | plus: 1 | divided_by: 100.0}})">
             {{ category.name }}
             <span class="meta">{{ category.size }}</span>
           </li>
@@ -27,8 +28,8 @@ layout: page
         {% for note in sorted_notes  %}
         <a href="{{ note.url | relative_url }}" class="note-link">
           <div class="item">
-            <!-- <p class="meta">{{ note.date  | date: "%B %-d, %Y" }}</p> -->
             <p class="title">{{ note.index }}. {{ note.title }}</p>
+            <p class="meta">Last updated on {{ note.date  | date: "%B %-d, %Y" }}</p>
           </div>
         </a>
         {% endfor %}
