@@ -15,16 +15,19 @@ theme_settings :
     experience :
       - start : 2019-06
         end : now
-        experience : Zhara music
+        experience : Head of software development department at Zhara music
       - start : 2017-09
         end : 2019-06
-        experience : SpritDSP
+        experience : Lead software engineer at SpritDSP
       - start : 2017-09
         end : 2016-04
-        experience : Aifil LCC
+        experience : Software engineer at Aifil LCC
       - start : 2014-04
         end : 2015-07
-        experience : Institute for System Programming of the Russian Academy of Sciences
+        experience : Software engineer at the Institute for System Programming of the Russian Academy of Sciences
+      - start : 2010-06
+        end : 2012-05
+        experience : Software engineer at the Institute for Problems of Information Transmission
     education :
       - start : 2006-09
         end : 2012-02
@@ -41,7 +44,7 @@ theme_settings :
         value : 75  # Percent value
       - skill : Algorithms
         value : 75  # Percent value
-      - skill : ML theory
+      - skill : ML algorithms
         value : 75  # Percent value
         
   # Icons
