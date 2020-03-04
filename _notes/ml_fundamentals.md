@@ -41,9 +41,9 @@ leads to different Confusion Matrices and respectively to different FPR and TPR.
 
 _mAP_ is popular metric in object detection and instance segmentation problems.
 
-_Average Precision is the area under precision-recall curve. To get multiple precision-recall
+_Average Precision_ is the area under precision-recall curve. To get multiple precision-recall
 pairs in case of instance segmentation and object detection IoU is calculated using different thresholds.
-mAP is just AP values averaged over different categories.
+mAP is AP values averaged over different categories.
 
 
 <br>

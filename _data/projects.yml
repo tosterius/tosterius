@@ -1,9 +1,9 @@
 - project :
     print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
     modal : False # If 'True' is selected, modal can open in 'about.html'. 
-    url : https://github.com/tosterius/ssd-tf # Full URL
+    url : https://github.com/tosterius/ssd.tf # Full URL
     date : 2019.11.26
-    title : SSD Detector reimplementation
+    title : SSD Detector implementation
     summary : A awesome jekyll theme!
     description : This project were written for the practice of programming with tensorflow and for better understanding how the models works.
 
