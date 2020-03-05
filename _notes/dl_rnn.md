@@ -91,15 +91,22 @@ of matrix multiplication over the sequence in ($\ref{eq6}$) (term $\frac{\partia
 #### Long Short-Term Memory (LSTM)
 
 ![lstm_0]({{ site.baseurl }}/assets/img/notes/lstm_0.png)
+
+
+The key idea behind LSTM is that there is a path $C_{t-1} \rightarrow C_{t}$ (at the picture below).
+It allows the information to flow unchanged if lstm multiply the old memory $C_{t-1}$ with the vector
+that is equal to $1$. This is so-called _forget gate_.
+
 ![lstm_2]({{ site.baseurl }}/assets/img/notes/lstm_2.png)
+
+
+
 ![lstm_1]({{ site.baseurl }}/assets/img/notes/lstm_1.png)
 ![lstm_3]({{ site.baseurl }}/assets/img/notes/lstm_3.png)
 ![lstm_4]({{ site.baseurl }}/assets/img/notes/lstm_4.png)
 ![lstm_5]({{ site.baseurl }}/assets/img/notes/lstm_5.png)
 
 
-The key idea behind LSTM is that there is a path $C_{t-1} \rightarrow C_{t}$ (at the top of the picture).
-It allows the information to flow unchanged.
 #### Links
 
 1. [Recurrent Neural Networks cheatsheet](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks#overview)
