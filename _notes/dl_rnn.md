@@ -86,6 +86,7 @@ Finally we get
 
 Such a vanilla form of RNN suffers from _vanishing and exploding gradients_. It happens because
 of matrix multiplication over the sequence in ($\ref{eq6}$) (term $\frac{\partial h^{t+1}}{\partial h^{k}}$).
+And it is the reason why it is difficult to capture long term dependencies.
 
 <br>
 #### Long Short-Term Memory (LSTM)
@@ -94,16 +95,57 @@ of matrix multiplication over the sequence in ($\ref{eq6}$) (term $\frac{\partia
 
 
 The key idea behind LSTM is that there is a path $C_{t-1} \rightarrow C_{t}$ (at the picture below).
-It allows the information to flow unchanged if lstm multiply the old memory $C_{t-1}$ with the vector
-that is equal to $1$. This is so-called _forget gate_.
+It allows the information to flow unchanged if our LSTM multiply the old memory $C_{t-1}$ with the vector
+that is equal to $1$. 
 
 ![lstm_2]({{ site.baseurl }}/assets/img/notes/lstm_2.png)
 
-
-
+###### _Forget gate_
+This is the first step. It decides what information to be thrown away from the cell state.
+This gate returns the value between $(0, 1)$ and that is why the sigmoid function is used:
+\\[
+\begin{equation}
+f_t = \sigma(W_{wf}x_t + W_{hf}h_{t-1} + W_{cf}c_{t-1} + b_f)
+\tag{0}\label{eq7}
+\end{equation}
+\\]
 ![lstm_1]({{ site.baseurl }}/assets/img/notes/lstm_1.png)
+
+###### _Input gate and Candidate cell state_
+This step controls how much the new memory should influence the old memory.
+This has two parts. The _input gate_ decides which value from input should be used to
+modify the memory. Next, a tanh layer creates a vector of new candidate values 
+(or in other words the new memory) $\hat c$
+
+\\[
+\begin{split}
+&i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i)\\\\\\\\
+&\hat c_t = tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_{\hat c})\\\\\\\\
+\end{split}
+\tag{1}\label{eq8}
+\\]
+
 ![lstm_3]({{ site.baseurl }}/assets/img/notes/lstm_3.png)
+
+###### _The next state computing_
+\\[
+\begin{equation}
+c_t = f_t * c_{t-1} + i_t * \hat c_t
+\tag{2}\label{eq9}
+\end{equation}
+\\]
 ![lstm_4]({{ site.baseurl }}/assets/img/notes/lstm_4.png)
+
+###### _The output_
+This output $h_t$ is based on our cell state $c_t$
+\\[
+\begin{split}
+&o_t = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o)\\\\\\\\
+&h_t = o_t * tanh(c_t)\\\\\\\\
+\end{split}
+\tag{3}\label{eq10}
+\\]
+
 ![lstm_5]({{ site.baseurl }}/assets/img/notes/lstm_5.png)
 
 
