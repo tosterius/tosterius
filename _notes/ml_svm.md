@@ -29,7 +29,7 @@ where $\mathbf{w}$ is the normal vector to the hyperplane. $\frac{b}{\Arrowvert 
 
 
 #### Linearly separable data (hard-margin)
-To find optimal separating hyperplane we can select to parallel hyperplanes that separate two categories,
+To find optimal separating hyperplane we can select two parallel hyperplanes that separate two categories,
 so that the distance between them as large as possible
 \\[
 \begin{split}
@@ -38,7 +38,7 @@ so that the distance between them as large as possible
 \end{split} \tag{1}\label{eq1}
 \\]
 
-The distance between these two hyperplane is $\frac{2}{\Arrowvert \mathbf{w} \Arrowvert}$.
+The distance between these two hyperplanes is $\frac{2}{\Arrowvert \mathbf{w} \Arrowvert}$.
 
 (proof: $d = proj_{\mathbf{w}}\mathbf{c} = \frac{\mathbf{w} \cdot \mathbf{c}}{\Arrowvert \mathbf{w} \Arrowvert} = \frac{(\mathbf{B} - \mathbf{A})\cdot \mathbf{w}}{\Arrowvert \mathbf{w} \Arrowvert} = \frac{(\mathbf{B}\mathbf{w} - \mathbf{A}\mathbf{w})}{\Arrowvert \mathbf{w} \Arrowvert} = \frac{b+1 -b+1}{\Arrowvert \mathbf{w} \Arrowvert} = \frac{2}{\Arrowvert \mathbf{w} \Arrowvert}$)
 
@@ -49,8 +49,8 @@ Now we can define an optimization problem to find optimal margin classifier:
 
 \\[
 \begin{split}
-&\frac{1}{2}\Arrowvert \mathbf{w} \Arrowvert \rightarrow min \\\\\\
-&y(\mathbf{w}^T \mathbf{x}-b) \geqslant 1
+&\frac{1}{2}\Arrowvert \mathbf{w} \Arrowvert \rightarrow \min \\\\\\
+&subject\;to\; y_i(\mathbf{w}^T \mathbf{x}-b) \geqslant 1, \;i=1\dots m
 \end{split} \tag{2}\label{eq2}
 \\]
 
@@ -99,6 +99,7 @@ The dual problem is thus stated as:
 Solving the last problem we get $\alpha_i$. Now we can calculate $\mathbf{w}=\sum_{i=1}^{m}{\alpha_iy_i\mathbf{x_i}}$ 
 and $b = \frac{1}{S}\sum_{i=1}^S(y_i-\mathbf{w}\cdot \mathbf{x_i})$, where $S$ is the number of support vectors.
 
+The problem with hard-margin SVM is that it does not work with linearly inseparable data.
 
 <br>
 ####  Linearly inseparable data (soft-margin)
@@ -106,6 +107,42 @@ and $b = \frac{1}{S}\sum_{i=1}^S(y_i-\mathbf{w}\cdot \mathbf{x_i})$, where $S$ i
 ![svm_insep]({{ site.baseurl }}/assets/img/notes/svm_insep.png)
 
 ### Nonlinear classification. Kernel trick
+
+##### Noisy data
+To tackle the problem with linearly inseparable data caused by outliers (noisy data) we modify our equations ($\ref{eq2}$) 
+introducing slack variables $\psi_i$:
+
+\\[
+\begin{split}
+&\min_{w,b,\psi}\frac{1}{2}\Arrowvert \mathbf{w} \Arrowvert + \sum_{i=1}^{m}\psi_i\\\\\\
+&subject\;to\; y_i(\mathbf{w}^T \mathbf{x}-b) \geqslant 1 - \psi_i, \; \psi_i \ge 0 \;i=1\dots m
+\end{split} \tag{8}\label{eq8}
+\\]
+We add $\psi_i \ge 0$ to prevent the optimization by using negative values.
+
+Dual problem is defined as
+
+\\[
+\begin{split}
+&\max_\alpha \sum_{i=1}^m\alpha_i -\frac{1}{2}\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_j(\mathbf{x_i}\cdot \mathbf{x_j}) \\\\\\
+&subject\space to\space 0 \le \alpha_i \le C, i=1...m, \sum_{i=1}^m{a_iy_i}=0
+\end{split} \tag{9}\label{eq9}
+\\]
+
+##### Kernel Trick
+
+There are situations where a nonlinear region can separate the groups more efficiently.
+The idea is to use replace the dot-product $(\mathbf{x_i}\cdot \mathbf{x_j})$ with
+a kernel function $K(x_i,x_j)$
+\\[
+\begin{split}
+&\max_\alpha \sum_{i=1}^m\alpha_i -\frac{1}{2}\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_j K(x_i,x_j) \\\\\\
+&subject\space to\space 0 \le \alpha_i \le C, i=1...m, \sum_{i=1}^m{a_iy_i}=0
+\end{split} \tag{10}\label{eq10}
+\\]
+
+We can think of it like dot product is performed in another space.
+We now have the ability to change the kernel function in order to classify non-linearly separable data.
 
 <br>
 #### Links 
