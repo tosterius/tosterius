@@ -18,7 +18,7 @@ y = \mathbf{w}^T\mathbf{x}, \; \mathbf{x} \in R^D\tag{0}\label{0}
 \end{equation}
 \\]
 
-##### Maximum likelihood and least squares
+### Maximum likelihood and least squares
 
 We assume that the target variable $t$ is given by a function $y(\mathbf{x}, \mathbf{w})$ with additive Gaussian noise:
 \\[
@@ -57,7 +57,7 @@ Here we can see that maximization of the likelihood function  is equivalent to m
 a sum-of-squares error function. 
 
 
-##### Analytical solution
+### Analytical solution
 
 We can write the residual sum-of-squares as:
 
@@ -82,3 +82,15 @@ we get the solution:
 \mathbf{\hat w} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T t \tag{7}\label{7}
 \end{equation}
 \\]
+
+
+Here are the problems:
+- what if $\mathbf{X}^T \mathbf{X}$ is singular (number of observations greater than number of features
+  or two or more features are linearly dependent) ?
+- what if the dimensions of $\mathbf{X}$ are too large
+
+
+### Regularization
+
+- MSE (sensitive to noise)
+- MAE (non-diff)
