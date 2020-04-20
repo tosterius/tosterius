@@ -7,14 +7,15 @@ headline:
 picture:
 ---
 
-Given training dataset of $N$ observations $\{\mathbf{x}_n\}$ with corresponding 
-target values $t_n$ : $\\{\mathbf{x}_n, t_n\\},\; n = 1 \dots N$.
-The goal of regression is to predict the target value $t$ by input $\mathbf{x}$.
+Given a dataset of $N$ observations $\\{\mathbf{x}_n, t_n\\},\; n = 1,\dots,N$.
 
-The response of the model is modeled as linear combination of predictors:
+The goal to find a function $y: \mathbb{R}^D \rightarrow \mathbb{R}$ such that $t \approx y(\mathbf{x}, \mathbf{w})$. Simply speaking
+we need to predict the target value $t$ by input $\mathbf{x}$.
+
+The linear regression model has the form:
 \\[
 \begin{equation}
-y = \mathbf{w}^T\mathbf{x}, \; \mathbf{x} \in R^D\tag{0}\label{0}
+y = \mathbf{w}^T\mathbf{x}, \; \mathbf{x} \in \mathbb{R}^D\tag{0}\label{0}
 \end{equation}
 \\]
 
@@ -94,3 +95,6 @@ Here are the problems:
 
 - MSE (sensitive to noise)
 - MAE (non-diff)
+
+#### Ridge regression model
+
