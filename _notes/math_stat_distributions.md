@@ -93,7 +93,7 @@ Probability density function:
 
 \\[
 \begin{equation}
-f(x) = \frac{1} {\sigma\sqrt{2\pi}} e^{-(x - \mu)^{2}/(2\sigma^{2}) }
+p(x|\mu, \sigma^{2}) = \frac{1} {\sigma\sqrt{2\pi}} e^{-(x - \mu)^{2}/(2\sigma^{2}) }
 \end{equation}
 \\]
 
@@ -109,6 +109,19 @@ The notation $N(\mu, \sigma^2)$ means normally distributed with mean $\mu$ and v
 - In modeling applications, such as linear and non-linear regression, the error term is often assumed to follow a normal distribution with fixed location and scale.
 - The normal distribution is used to find significance levels in many hypothesis tests and confidence intervals. 
 
+Multivarite version:
+
+\\[
+\begin{equation}
+p(x|\mu, \Sigma) = \frac{1} {(2\pi)^{d/2}\sqrt\Sigma} e^{-(x - \mu)^T \Sigma (x - \mu) }
+\end{equation}
+\\]
+
+\\[
+\begin{equation}
+E(x) = \mu, \; Cov(x) = \Sigma
+\end{equation}
+\\]
 
 <br>
 #### Links
