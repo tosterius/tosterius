@@ -63,8 +63,8 @@ Let us substitute it to likelihood expression and take a logarithm:
 ln (p(\mathbf{t}|\mathbf{w}, \sigma^2)) = -\frac{N}{2} ln(2\pi\sigma^2) - \frac{1}{2\sigma^2} \sum_{i = 1}^{N} (t_i - \mathbf{w}^T \mathbf{x}_i)^2.  \tag{5}\label{5}
 \end{equation}
 \\]
-Here we can see that maximization of the likelihood function  is equivalent to minimizing
-a sum-of-squares error function. 
+Here we can see that **maximization of the likelihood function  is equivalent to minimizing
+a sum-of-squares error function**. 
 
 
 ### Analytical solution
@@ -91,7 +91,7 @@ we get the solution:
 
 \\[
 \begin{equation}
-\mathbf{\hat w} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T t \tag{8}\label{8}
+\mathbf{\hat w} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{t} \tag{8}\label{8}
 \end{equation}
 \\]
 
@@ -161,13 +161,61 @@ into bias and variance.
 
 ### Regularization
 
-- MSE (sensitive to noise)
-- MAE (non-diff)
 
 #### Ridge regression model
 
+\\[
+\begin{equation}
+RSS_{ridge}(\mathbf{w}) = \frac{1}{2}\sum_{n = 1}^{N}(t_n − \mathbf{w}^T \mathbf{x}_n)^2 + \frac{\lambda}{2} \mathbf{w}^T\mathbf{w}
+\end{equation}
+\\]
+
+Analytic solution
+
+\\[
+\begin{equation}
+\mathbf{\hat w} = (\mathbf{X}^T \mathbf{X} + \lambda^2  \mathbf{I})^{-1} \mathbf{X}^T \mathbf{t}
+\end{equation}
+\\]
+
+- sensitive to noise
+
+#### Lasso regression model
+
+\\[
+\begin{equation}
+RSS_{lasso}(\mathbf{w}) = \frac{1}{2}\sum_{n = 1}^{N}(t_n − \mathbf{w}^T \mathbf{x}_n)^2 + \frac{\lambda}{2} ||\mathbf{w}||\_{L_1}
+\end{equation}
+\\]
+
+- insensitive to noise
+- leads to sparse model (if $\lambda$ is large some of coefficients become close to $0$)
+
+
+#### ElasticNet regularization
+\\[
+\begin{equation}
+RSS_{elastic}(\mathbf{w}) = \frac{1}{2}\sum_{n = 1}^{N}(t_n − \mathbf{w}^T \mathbf{x}_n)^2 + \frac{\lambda_1}{2} \mathbf{w}^T\mathbf{w} + \frac{\lambda_2}{2} ||\mathbf{w}||\_{L_1}
+\end{equation}
+\\]
+
 ### Metrics
 
+- MSE
+- MAE
+- Root MSE
+- MAPE
+\\[
+\begin{equation}
+MAPE = \frac{1}{n} \sum_{n = 1}^{N} \left|\frac{t_n - y_n}{t_n}\right\|
+\end{equation}
+\\]
+- SMAPE
+\\[
+\begin{equation}
+SMAPE = \frac{1}{n} \sum_{n = 1}^{N} \frac{2 |t_n - y_n|}{|t_n + y_n|}
+\end{equation}
+\\]
 #### Coefficient of determination ($R^2$)
 R-squared is the "percent of variance explained".
 
