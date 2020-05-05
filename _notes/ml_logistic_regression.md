@@ -27,14 +27,14 @@ since the probability is a  real number between 0 and 1.
 A few observations:
 
 - $\frac{p_+}{1 - p_+} \in \[0, +\infty)$ is the chance of assigning an example to the class "+"
-- $log(\frac{p_+}{1 - p_+}) \in (-\infty, +\infty)$
+- $\log(\frac{p_+}{1 - p_+}) \in (-\infty, +\infty)$
 
-It means we can predict the value of $log(\frac{p_+}{1 - p_+})$ using linear regression model.
+It means we can predict the value of $\log(\frac{p_+}{1 - p_+})$ using linear regression model.
 
 Combining this expression with the equation of linear regression we get
 \\[
 \begin{equation}
-log(\frac{p_+}{1 - p_+}) = \mathbf{w}^T\mathbf{x}
+\log(\frac{p_+}{1 - p_+}) = \mathbf{w}^T\mathbf{x}
 \end{equation}
 \\]
 and
@@ -57,14 +57,14 @@ p\left(y = y_i \mid \mathbf{x}_i, \mathbf{w}\right) = \sigma(y_i\mathbf{w}^T\mat
 Assuming that the objects in our data set are i.i.d. the likelihood of the data set can be written
 \\[
 \begin{equation}
-P\left(\mathbf{y} \mid \mathbf{X}, \mathbf{w}\right) = \prod_{i=1}^{N} P\left(y = y_i \mid \mathbf{x}_{i}, \mathbf{w}\right),
+P\left(\mathbf{y} \mid \mathbf{X}, \mathbf{w}\right) = \prod_{i=1}^{N} p\left(y = y_i \mid \mathbf{x}_{i}, \mathbf{w}\right),
 \end{equation}
 \\]
 
 
 \\[
 \begin{split}
-\log P(\mathbf{y} \mid \mathbf{X}, \mathbf{w}) &= \log \prod_{i=1}^{N} P(y = y_i \mid \mathbf{x}_{i}, \mathbf{w}) \\\\\\
+\log P(\mathbf{y} \mid \mathbf{X}, \mathbf{w}) &= \log \prod_{i=1}^{N} p(y = y_i \mid \mathbf{x}_{i}, \mathbf{w}) \\\\\\
  &= \log \prod\_{i=1}^{N} \sigma(y\_i\mathbf{w}^{T}\mathbf{x}\_i) \\\\\\
  &= \sum\_{i=1}^{N} \log \sigma(y\_i\mathbf{w}^{T}\mathbf{x}\_i) \\\\\\
  &= \sum\_{i=1}^{N} \log \frac{1}{1 + \exp^{-y\_i\mathbf{w}^{T}\mathbf{x}_i }} \\\\\\
@@ -72,6 +72,21 @@ P\left(\mathbf{y} \mid \mathbf{X}, \mathbf{w}\right) = \prod_{i=1}^{N} P\left(y 
 \end{split}
 \\]
 
+That gives us the logistic loss
+
+\\[
+\begin{equation}
+E_{\text{logistic}} = \sum\_{i=1}^{N} \log (1 + \exp^{-y\_i\mathbf{w}^{T}\mathbf{x}_i })
+\end{equation}
+\\]
+where $y\_i \in \\{-1, +1\\}$.
+
+
+Note: Logistic regression model predicts calibrated probabilities.
+Predicted probabilities that match the expected distribution of probabilities for each class are referred to as calibrated. 
+
+
+### Metrics
 
 <br>
 #### Links

@@ -6,10 +6,13 @@ index: 0
 headline:
 picture:
 ---
-#### Confusion matrix. Accuracy, Recall(Sensitivity), Specificity
+
+### Classification metrics
+#### Confusion matrix
 
 ![confusion_matrix]({{ site.baseurl }}/assets/img/notes/confusion_matrix.png)
 
+### Accuracy, Recall(Sensitivity), Specificity
 \begin{equation}
 Accuracy = \frac{Tp + Tn}{P + N}
 \end{equation}
@@ -28,6 +31,19 @@ Specificity = \frac{Tn}{Tn + Fp}
 
 \begin{equation}
 FalsePositiveRate = 1 - Specificity = \frac{Fp}{Tn + Fp}
+\end{equation}
+
+
+#### F1
+
+\begin{equation}
+F_1 =\frac{2}{precision^{-1} + recall^{-1}} = 2 \frac{precision \; recall}{precision + recall}
+\end{equation}
+
+#### $F_\beta$ in case of different ratio of precision and recall
+
+\begin{equation}
+F_\beta = (1 + \beta^2) \frac{precision \; recall}{\beta^2 precision + recall}
 \end{equation}
 
 #### ROC, AUC
