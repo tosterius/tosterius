@@ -87,6 +87,7 @@ Predicted probabilities that match the expected distribution of probabilities fo
 
 
 ### Metrics
+[Link](/notes/ml_fundamentals.html)
 
 <br>
 #### Links

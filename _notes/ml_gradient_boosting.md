@@ -56,6 +56,13 @@ If our loss function is SSR then $\gamma$ is just the mean of $y_1,\dots y_n$.
 3. Output $F(x) = F_M(x)$.
 
 
+#### Insights
+
+1. There is no reason to  use a linear model as the base model of GB.
+   Because linear combination of linear models is still linear model.
+2. But we can use logistic regression as the base model of GB. 
+   Linear combination of sigmoids is nonlinear function.
+   
 <br>
 #### Links
 

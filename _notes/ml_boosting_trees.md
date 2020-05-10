@@ -21,15 +21,15 @@ _decision stumps_ (just a node and two leaves).
 ##### The boosting algorithm Adaboost
 <br>
 The idea is to set weights to both classifiers and samples in a way that forces classifiers 
-to focus on observations that are difficult to correctly classify. In other words weight of
-a sample indicates how important it is to be correctly classified.
+to focus on observations that are difficult to correctly classify. In other words __weight of
+a sample indicates how important it is to be correctly classified__.
 
-1. Given the training set $(x_0, y_0),\dots, (x_m, y_m)$, where $x_i \in X$, $y_i \in \{-1, 1\}$
+1. Given the training set $(x_0, y_0),\dots, (x_m, y_m)$, where $x_i \in X$, $y_i \in \\{-1, 1\\}$
 2. Initialize weights of samples $D_1(i) = 1/m$, for $i=1,\dots, m$. It means the samples are equally
 important
 3. For $t=1,\dots, T$:
     1. Train a weak learner using distribution $D_t$
-    2. Get weak hypothesis $h_t \rightarrow \{-1, 1\}$
+    2. Get weak hypothesis $h_t \rightarrow \\{-1, 1\\}$
     3. Aim: select $h_t$ with low weighted error: $\epsilon_t = Pr_{i\sim D_t}(h_t(x_i) \neq y_i)$.
 
     4. Choose weight of hypothesis (classifier):
@@ -76,7 +76,7 @@ coefficient $Z_t$.
 
 In the picture below there is a graph of $\exp(-\alpha_t y_i h_t(x_i))$ depending on the sign of $y_i h_t(x_i)$.
 ![adaboost_0]({{ site.baseurl }}/assets/img/notes/adaboost_0.png)
-It easy to see when the value of $y_i h_t(x_i)$ is positive i.e. the signs of both ground truth value $y_i$ and 
+It is easy to see when the value of $y_i h_t(x_i)$ is positive i.e. the signs of both ground truth value $y_i$ and 
 hypothesis $h_t(x_i)$ match, then we scale the previous sample with small number and vice versa.
 
 <br>
