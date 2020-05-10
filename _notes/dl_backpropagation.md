@@ -1,15 +1,17 @@
 ---
 layout: note
-title: "Backpropagation in neural networks"
+title: "Backpropagation in neural networks. Activation functions."
 category: DL
 index: 0
 headline: 
 picture: 
 ---
 
+### Backpropagation
+
 Let us start with a notation which we will use in the explanation.
 
-- $w_{jk}^l$ is the weight for node $k$ in the layer $l$ for incoming node $j$
+- $w_{jk}^l$ is the weight of connection from node $k$ in the layer $l - 1$ to node $j$ in the next layer
 - $b_j^l$ is the bias for node $j$ in the layer $l$
 - $a_j^l$ is the activation of $j$-th neuron in the layer $l$
 - E is the cost function
@@ -122,7 +124,31 @@ Let us calculate the gradient $\frac{\partial E}{\partial w^1}$:
 The maximum of the derivative of the sigmoid function is $0.25$. If the weights $w^i$ are less than $1$ the right
 side of equation will exponentially decrease. 
 
-#### Links
+
+### Activations
+
+- Sigmoid $\sigma(x) = \frac{1}{1 + \exp(x)}$
+  - saturated neurons zeros out the gradients
+  - non zero centered
+  - $exp$ is computationally expensive
+
+- $tanh(x) = \frac{\exp(x) - \exp(-x)}{\exp(x) + \exp(-x)}$
+  + saturated neurons zeros out the gradients 
+  + squashes input to range $\[-1, 1\]$
+  + zero centered
+
+- $ReLU(x) = max(0, x)$
+  + non-zero derivative if $x > 0$
+  + computationally cheap
+  + not zero centered
+
+- $Leaky\;ReLU(x) = max(0.01x, x)$
+  + non-zero derivative
+  
+- $Exponential\;ReLU(x) = x \; if \; x > 0 \;else \; \alpha(exp(x) - 1)$
+  + non-zero derivative
+  
+### Links
 
 1. [How the backpropagation algorithm works](http://neuralnetworksanddeeplearning.com/chap2.html)
 2. [Calculus on Computational Graphs: Backpropagation](http://colah.github.io/posts/2015-08-Backprop/)
