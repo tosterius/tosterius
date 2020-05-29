@@ -51,10 +51,16 @@ All three matrices are unique. $U$ and $V$ are column orthonormal. Entities of $
 __positive and sorted in decreasing order__.
 
 
+<br>
+#### Geometrical intuition
 
-#### Math intuition
-Let $\mathbf{v}_0$ and $\mathbf{v}_1$ be orthogonal vectors in some two-dimensional vector space $S$. We know that any two orthogonal vectors 
-form a basis in two-dimensional space. Linear operator $A$ maps $S$ to $Q$:
+([Detailed explanation by Gregory Gundersen](http://gregorygundersen.com/blog/2018/12/10/svd/))
+
+Any linear transformation can be thought of as simply stretching or compressing or flipping a square, provided we are allowed to rotate it first.
+This is the geometric essence of SVD.
+
+Let $\mathbf{v}_1$ and $\mathbf{v}_2$ be orthogonal vectors in some two-dimensional vector space $S$. We know that __any two orthogonal vectors 
+form a basis in two-dimensional space__. Linear operator $A$ maps $S$ to $Q$:
 \\[
 \begin{split}
 A \mathbf{v}_1 &= \mathbf{u}_1 \sigma_1\\ \;\;
@@ -67,7 +73,7 @@ And $\sigma_1$ and $\sigma_2$ are the lengths of the new vectors in space $Q$.
 Any vector $\mathbf{x}$ can be written as:
 \\[
 \begin{equation}
-\mathbf{x} = (\mathbf{x} \cdot \mathbf{v}_1) \mathbf{v}_1 + (\mathbf{x} \cdot \mathbf{v}_2), \mathbf{v}_2 \tag{2}\label{eq2}
+\mathbf{x} = (\mathbf{x} \cdot \mathbf{v}_1) \mathbf{v}_1 + (\mathbf{x} \cdot \mathbf{v}_2) \mathbf{v}_2 \tag{2}\label{eq2}
 \end{equation}
 \\]
 where $\mathbf{x} \cdot \mathbf{v}$ is just a projection $\mathbf{x}$ on to $\mathbf{v}$.
@@ -150,7 +156,9 @@ Performing SVD we get:
 \end{equation}
 \\]
 
-Principal components are given by $\mathbf A \mathbf V = \mathbf U \mathbf \Sigma \mathbf V^\top \mathbf V = \mathbf U \mathbf \Sigma$
+We can see that PCA diagonalizes the covariance matrix of $\mathbf A$ and looks for the major axes along which our data varies.
+
+Principal components are given by $\mathbf A \mathbf V = \mathbf U \mathbf \Sigma \mathbf V^\top \mathbf V = \mathbf U \mathbf \Sigma$.
 
 
 #### Another way to implement PCA:
@@ -158,7 +166,7 @@ Principal components are given by $\mathbf A \mathbf V = \mathbf U \mathbf \Sigm
 1. Data normalization and centering
 2. Covariance matrix computation
 3. Computation of eigenvalues and eigenvectors
-4. Sorting them from largest to smallest and choosing comonents.
+4. Sorting them from largest to smallest and choosing components.
    Choose $k$ eigenvectors with the largest eigenvalues (dimension reduction).
 5. To compute Principal Components form a feature vector using the eigenvectors we chose to keep.
    Multiply the original data by the eigenvectors to re-orient data onto the new axes
