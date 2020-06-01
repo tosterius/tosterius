@@ -46,7 +46,7 @@ It means the uncertainty takes its maximum value 1, since there is no chance to 
 Another toy example. Circles color in dependence on their coordinates:
 ![decision_tree_0]({{ site.baseurl }}/assets/img/notes/decision_tree_explanation_0.png)
 There are 17 circles: 9 red and 8 green.
-The entropy of inital state is equal to
+The entropy of initial state is equal to
 
 \\[
 \begin{equation}
@@ -54,7 +54,7 @@ S_0 = - \frac{9}{17}log_2\frac{9}{17} - \frac{8}{17}log_2\frac{8}{17} = 0.997502
 \end{equation}
 \\]
 
-Let us split our circles into two groups as folows:
+Let us split our circles into two groups as follows:
 ![decision_tree_1]({{ site.baseurl }}/assets/img/notes/decision_tree_explanation_1.png)
 The entropy of these two groups:
 \\[
@@ -78,7 +78,7 @@ IG = S_0- \frac{10}{17}S_l - \frac{7}{17}S_r = 0.23546616740539644.
 We can continue to split the dataset into groups in the way in which we are until
 the circles in each group are all of the same color.
 
-Usially we deal with multicategorial data represented as table(s). In each step ID3 algorithm
+Usually we deal with multicategorial data represented as table(s). In each step ID3 algorithm
 choses the attribute with the largest information gain as the decision node.
 
 <br>
@@ -156,7 +156,7 @@ To build regression tree we recursively apply the same procedure for observation
 <!-- In other words algorithm decides on the splitting variables and split points. So if we have
  a partition in $M$ regions $R_1, R_2, \dots, R_M$  -->
 
-#### How to prevent overfitting. Prunining regression trees.
+#### How to prevent overfitting. Pruning regression trees.
 
 - do splitting only if number of observations more than some minimum number
 - pruning
