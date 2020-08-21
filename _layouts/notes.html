@@ -29,7 +29,7 @@ layout: page
         <a href="{{ note.url | relative_url }}" class="note-link">
           <div class="item">
             <p class="title">{{ note.index }}. {{ note.title }}</p>
-            <p class="meta">Last updated on {{ note.last_modified_at  | date: "%B %-d, %Y" }}</p>
+            <p class="meta">Creation date: {{ note.cdate }}. &nbsp; Last updated on {{ note.last_modified_at  | date: "%B %-d, %Y" }}</p>
           </div>
         </a>
         {% endfor %}

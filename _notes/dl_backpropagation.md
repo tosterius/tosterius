@@ -1,5 +1,6 @@
 ---
 layout: note
+cdate: "Dec 23, 2019"
 title: "Backpropagation in neural networks. Activation functions."
 category: DL
 index: 0

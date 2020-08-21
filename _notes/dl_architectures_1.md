@@ -1,5 +1,6 @@
 ---
 layout: note
+cdate: "Jan 7, 2020"
 title: "Popular architectures"
 category: DL
 index: 4

@@ -1,5 +1,6 @@
 ---
 layout: note
+cdate: "Jan 4, 2020"
 title: Gradient Boosting Machine
 category: ML
 index: 7

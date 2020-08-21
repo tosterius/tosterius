@@ -1,5 +1,6 @@
 ---
 layout: note
+cdate: "Dec 21, 2019"
 title: Support Vector Machines
 category: ML
 index: 3

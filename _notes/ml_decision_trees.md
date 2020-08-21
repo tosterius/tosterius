@@ -1,5 +1,6 @@
 ---
 layout: note
+cdate: "Dec 21, 2019"
 title: Decision Trees
 category: ML
 index: 4

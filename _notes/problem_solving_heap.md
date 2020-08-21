@@ -1,5 +1,6 @@
 ---
 layout: note
+cdate: "Jan 10, 2020"
 title: "Problem solving approach: heap"
 category: 'Algorithms'
 index: 2

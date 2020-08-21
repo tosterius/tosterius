@@ -1,5 +1,6 @@
 ---
 layout: note
+cdate: "Feb 3, 2020"
 title: "Nonlinear optimization."
 category: "Math"
 index: 2

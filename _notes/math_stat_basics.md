@@ -1,5 +1,6 @@
 ---
 layout: note
+cdate: "Feb 3, 2020"
 title: "Basics of statistics"
 category: "Math"
 index: 0

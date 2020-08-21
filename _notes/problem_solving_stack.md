@@ -1,5 +1,6 @@
 ---
 layout: note
+cdate: "Dec 19, 2019"
 title: "Problem solving approach: stack and queue"
 category: 'Algorithms'
 index: 1

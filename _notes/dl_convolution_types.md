@@ -1,5 +1,6 @@
 ---
-layout: note # You can ommit this if you've set it as a default
+layout: note 
+cdate: "Dec 21, 2019"
 title: "Convolution types: transposed convolution and dilated convolution"
 category: DL
 index: 3
