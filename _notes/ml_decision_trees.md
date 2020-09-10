@@ -17,13 +17,14 @@ There are two types of decision trees:
 
 <br>
 ### 1. Decision tree building. Classification tree.
-<br>
-Decision tree algorithms transforms raw data to rule based decision tree.
+
+Decision tree algorithms transform raw data to rule based decision tree.
 The decision of making data splits heavily affects a tree's accuracy. There are several algorithms to decide how to split a node in
 two or more subnodes. Splitting criteria (metric) is different for classification and regression trees.
 
-##### Information Gain (based on Entropy)
 <br>
+##### 1.1 Information Gain. Entropy.
+
 *Shannon's entropy* is defined as:
 \\[
 \begin{equation}
@@ -83,24 +84,30 @@ Usually we deal with multicategorial data represented as table(s). In each step 
 choses the attribute with the largest information gain as the decision node.
 
 <br>
-##### Gini index (or Gini impurity)
+##### 1.2 Gini index (or Gini impurity)
 
 Another splitting criteria is based on Gini Index. It is used in the CART algorithm.
 Gini index is a measure of particular element being wrongly classified when it is randomly chosen.
+Let's say $p_i$ is the probability of object being classified to a particular class, then
+\\[
+\begin{equation}
+G = \sum^{C}_{i=1} p_i \large ( \sum\_{k \neq i}^{C} p_k\\large ) = \sum^{C}\_{i=1} p\_i(1 - p\_i),
+\end{equation}
+\\]
+
 \\[
 \begin{equation}
 G = 1 - \sum^{C}_{i=1}p_i^2
 \end{equation}
 \\]
-where $p_i$ is the probability of object being classified to a particular class.
+
 It is easy to see that $G=0$ if all observations belong to the same class (label).
 Gini Index and Entropy can be used interchangeably.
 
 Gini based splitting favors larger partitions. Entropy  that have small counts but many distinct values.
 
 <br>
-
-##### How to work with different types of features
+##### 1.3 How to work with different types of features
 __Common notes__:
 - if chosen splitting feature does not give us a reduction in impurity score, we do not use
   this feature
@@ -116,6 +123,7 @@ __Categorical data, ranked data__:
 - calculate splitting criteria for each  feature value
 - choose the best splitting criteria value
 
+<br>
 ### 2. Regression tree.
 
 Let us consider, as an example how the amount of fertilizers influence growth rate of vegetables.
@@ -156,8 +164,8 @@ To build regression tree we recursively apply the same procedure for observation
 
 <!-- In other words algorithm decides on the splitting variables and split points. So if we have
  a partition in $M$ regions $R_1, R_2, \dots, R_M$  -->
-
-#### How to prevent overfitting. Pruning regression trees.
+<br>
+#### 2.1 How to prevent overfitting. Regression trees pruning.
 
 - do splitting only if number of observations more than some minimum number
 - pruning
@@ -190,7 +198,7 @@ To do that do the following steps:
 3. go back to the trees from 1 and pick the tree that corresponds to the final value from 2
 
 <br>
-#### Links
+### Links
 
 - [Implementing Decision Tree From Scratch in Python](https://medium.com/@penggongting/implementing-decision-tree-from-scratch-in-python-c732e7c69aea)
 
