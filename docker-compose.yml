@@ -3,7 +3,7 @@ version: '0.1'
 services:
   jekyll:
     image: site-jekyll
-    command: jekyll serve --watch --incremental --host 0.0.0.0
+    command: jekyll serve --watch --host 0.0.0.0
     volumes:
       - .:/site
     ports:

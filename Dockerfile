@@ -1,6 +1,5 @@
 FROM ruby:2.6
 
-RUN mkdir /site
 WORKDIR /site
 
 RUN gem install bundler -v "~>2.0"
