@@ -118,7 +118,7 @@ here $m(X)$ is central point. The choice of measure $m(X)$ depends on our data s
 <br>
 #### 5. Interquartile range (IQR)
 
-_Quartiles_ divide a rank-oredered data set into $4$ equal parts.
+_Quartiles_ divide a rank-ordered data set into $4$ equal parts.
 The _interquartile range (IQR)_ is the difference between the first quartile and third quartile.
 $Q_1$ is the median of the $n$ smallest numbers. $Q_3$ is the median of the $n$ largest numbers.
 \\[

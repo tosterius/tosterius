@@ -43,9 +43,9 @@ using softmax and linear regression (as we saw it in RCNN) layer simultaneously.
 <br>
 #### Faster R-CNN
 
-Faster R-CNN introduces _Region Prooposal Network_ (RPN).
+Faster R-CNN introduces _Region Proposal Network_ (RPN).
 It's purpose is to extract all the regions of interest (ROIs).
-RPN is based on idea of _anchor boxes_: at each positon of output feature map 9 (3 sizes and 3 shapes) 
+RPN is based on idea of _anchor boxes_: at each position of output feature map 9 (3 sizes and 3 shapes) 
 anchor boxes are generated. To generate labels
 for training RPN IoU of all anchor boxes against all the ground truth boxes is calculated.
 

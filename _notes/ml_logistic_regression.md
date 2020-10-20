@@ -17,7 +17,7 @@ The goal is to take an input vector $x$ and to assign it to one of these $K$ cla
 For binary classification $C_k = \\{-1, +1\\}$.
 
 
-### Intuition behind Logostic Regression
+### Intuition behind Logistic Regression
 
 Let us think of predicting the probability of object to belong to positive class 
 $p_+ = p\left(y_i = 1 \mid \mathbf{x}\right)$.

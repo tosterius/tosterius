@@ -110,7 +110,7 @@ The notation $N(\mu, \sigma^2)$ means normally distributed with mean $\mu$ and v
 - In modeling applications, such as linear and non-linear regression, the error term is often assumed to follow a normal distribution with fixed location and scale.
 - The normal distribution is used to find significance levels in many hypothesis tests and confidence intervals. 
 
-Multivarite version:
+Multivariate version:
 
 \\[
 \begin{equation}

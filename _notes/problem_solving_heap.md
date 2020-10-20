@@ -11,7 +11,7 @@ Binary heap is based on _complete_ binary tree. All the nodes of a max-heap (or 
 that the key of a node is larger than or equal (or less than or equal to) to the keys of it's children nodes.
 
 We represent $N$-element heap as array $pq$ of length $N+1$. The parent of the node in position
-$i$ is in position $\lfloor \frac{i}{2} \rfloor$. The children of the node in postion $i$ are in positions
+$i$ is in position $\lfloor \frac{i}{2} \rfloor$. The children of the node in position $i$ are in positions
 $2i$ and $2i + 1$.
 
 __Note:__ <span style="background-color:#ddd">STL PriorityQueue is implemented using max-heap</span>
