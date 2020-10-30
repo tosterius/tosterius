@@ -13,7 +13,7 @@ In simple words, Random Forest uses bagging to build a collection of decision tr
 Let us denote $B$ as a number of tree we are going to create.
 $p$ is the number of features.
 
-__Random Fores algorithm__:
+__Random Forest algorithm__:
 
 1. For $b = 1$ to $b = B$:
    1. create bootstrapped data set $Z$ from the training data
@@ -70,11 +70,15 @@ we first determine which samples are similar to the one with missing data. So he
    trees in RF.
    4. Recalculate the missing values using proximity matrix (as a weighted average, or weighted frequency)
 
-#### Missing data in the dataset that we want to categorize
-TODO
+[comment]: <>(Missing data in the dataset that we want to categorize)
+
 
 #### Variable importance
-TODO
+1. Naive approach is to merely count the number of times each variable is selected by all individual trees
+2. Mean Decrease in Impurity: improvement in the splitting criterion produced by each variable over all trees 
+3. Permutation feature importance. Estimation is based on decrease in a model score then a single feature 
+variable is randomly shuffled
+
 
 #### Key features
 - there is no need to use validation data set to estimate the quality of trained model
@@ -82,4 +86,7 @@ TODO
   
 <br>
 #### Links
+
 [StatQuest: Random Forests Part 1 - Building, Using and Evaluating](https://www.youtube.com/watch?v=J4Wdy0Wc_xQ&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=38)
+
+[Sklearn. Permutation feature importance](https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance)
