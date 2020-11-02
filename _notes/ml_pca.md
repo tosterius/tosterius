@@ -1,6 +1,7 @@
 ---
 layout: note
 cdate: "Jan 3, 2020"
+mdate: "Aug 22, 2020"
 title: Singular Value Decomposition (SVD). Principal Component Analysis (PCA).
 category: ML
 index: 8

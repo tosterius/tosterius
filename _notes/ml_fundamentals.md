@@ -1,6 +1,7 @@
 ---
 layout: note
 cdate: "Feb 10, 2020"
+mdate: "Aug 22, 2020"
 title: Fundamentals
 category: ML
 index: 0

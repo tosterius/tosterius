@@ -1,6 +1,7 @@
 ---
 layout: note 
 cdate: "Dec 21, 2019"
+mdate: "Nov 02, 2020"
 title: Linear Regression
 category: ML
 index: 1

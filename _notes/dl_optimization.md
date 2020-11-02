@@ -1,6 +1,7 @@
 ---
 layout: note
 cdate: "Dec 23, 2019"
+mdate: "Aug 22, 2020"
 title: "Gradient descent and optimization in neural networks"
 category: DL
 index: 1

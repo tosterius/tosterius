@@ -1,6 +1,7 @@
 ---
 layout: note
 cdate: "Jan 25, 2020"
+mdate: "Aug 22, 2020"
 title: "Recurrent neural networks"
 category: DL
 index: 5

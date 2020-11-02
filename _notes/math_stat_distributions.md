@@ -1,6 +1,7 @@
 ---
 layout: note
 cdate: "Feb 3, 2020"
+mdate: "Oct 20, 2020"
 title: "Refresher notes: Probability distributions"
 category: "Math"
 index: 1

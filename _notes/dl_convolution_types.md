@@ -1,6 +1,7 @@
 ---
 layout: note 
 cdate: "Dec 21, 2019"
+mdate: "Aug 22, 2020"
 title: "Convolution types: transposed convolution and dilated convolution"
 category: DL
 index: 3

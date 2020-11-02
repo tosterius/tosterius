@@ -1,6 +1,7 @@
 ---
 layout: note
 cdate: "Jan 2, 2020"
+mdate: "Aug 22, 2020"
 title: Boosting and Additive Trees. AdaBoost.
 category: ML
 index: 6

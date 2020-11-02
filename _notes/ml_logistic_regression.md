@@ -1,6 +1,7 @@
 ---
 layout: note
 cdate: "Dec 21, 2019"
+mdate: "Oct 20, 2020"
 title: Logistic Regression
 category: ML
 index: 2
