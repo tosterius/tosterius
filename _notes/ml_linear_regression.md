@@ -217,6 +217,7 @@ MAPE = \frac{1}{n} \sum_{n = 1}^{N} \left|\frac{t_n - y_n}{t_n}\right\|
 SMAPE = \frac{1}{n} \sum_{n = 1}^{N} \frac{2 |t_n - y_n|}{|t_n + y_n|}
 \end{equation}
 \\]
+
 #### Coefficient of determination ($R^2$)
 R-squared is the "percent of variance explained".
 
