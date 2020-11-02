@@ -1,6 +1,6 @@
 # Site Settings
-baseurl: ""
-url : ""
+baseurl: "tosterius.github.io"
+url : "tosterius"
 
 # Blog Settings
 theme_settings :
