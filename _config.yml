@@ -73,7 +73,7 @@ sass:
   style: :compressed
 plugins:
   - jekyll-paginate
-  - jekyll-last-modified-at
+
 bootstrap:
   assets: true
 
