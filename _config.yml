@@ -11,23 +11,23 @@ theme_settings :
   profile :
     image : assets/img/ava.png
     username : Arthur Yalaletdinov
-    description : Software engineer
+    description : Software engineer, Computer vision engineer
     experience :
       - start : 2019-06
         end : now
         experience : Head of software development department at Zhara music
       - start : 2017-09
         end : 2019-06
-        experience : Senior software engineer at SpritDSP
+        experience : Senior computer vision software engineer at SpritDSP
       - start : 2017-09
         end : 2016-04
-        experience : Software engineer at Aifil LCC
+        experience : Computer vision engineer at Aifil LCC
       - start : 2014-04
         end : 2015-07
         experience : Software engineer at the Institute for System Programming of the Russian Academy of Sciences
       - start : 2010-06
         end : 2012-05
-        experience : Software engineer at the Institute for Problems of Information Transmission
+        experience : Software engineer at the Institute for Problems of Information Transmission of the Russian Academy of Sciences
     education :
       - start : 2006-09
         end : 2012-02
