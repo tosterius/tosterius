@@ -25,14 +25,11 @@ x_k = \[u, v, s, r, \dot{u}, \dot{v}, \dot{s}\]
 \\]
 where $u$ and $v$ represent the horizontal and vertical pixel location of the centre of the target, 
 while the scale $s$ and $r$ represent the scale (area) and the aspect ratio of the target’s bounding box respectively.
-
 Kalman filter is used to correct velocity components.
 
 3. **The way to assign detections to existing targets**
 The problem of assigning detected bounding boxes to existing objects is solved as linear assignment 
 problem using the [Hungarian algorithm](https://en.wikipedia.org/wiki/Hungarian_algorithm).
-
-
 
 <br>
 #### Links
