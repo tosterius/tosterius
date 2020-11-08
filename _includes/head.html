@@ -15,13 +15,16 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  
   <script>
-  MathJax = {
-    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-  };
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
   </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-chtml.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.0/es5/tex-mml-chtml.js"></script>
   <!-- OG Tag -->
   {% if page.title %}
   {% assign title = site.theme_settings.title | append: "-" | append: page.title %}
