@@ -227,3 +227,9 @@ R-squared is the "percent of variance explained".
 R^2 = \frac{Var(mean) - Var(fit)}{Var(mean)}
 \end{equation}
 \\]
+
+### Pros & Cons
+- [+] easy to interpret
+- [+] computational efficient
+- [-] gets affected by outliers
+- [-] does not work well with correlated features
