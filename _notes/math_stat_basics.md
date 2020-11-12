@@ -27,27 +27,59 @@ The number of combinations of subsets of size $k$ drawn from a set of size $n$ i
 
 
 <br>
-#### 1. Expectation and variance
-If $X$ is discrete random variable:
+#### 1. Expectation, variance, skewness
+
+**Expectation**:
+
+if $X$ is discrete random variable:
 \\[
 \begin{equation}
-E(X) = \sum_{x}^{\infty} x \, p_X(x)
+E[X] = \sum_{x}^{\infty} x \, p_X(x)
 \end{equation}
 \\]
-If $X$ is continuous random variable:
+if $X$ is continuous random variable:
 \\[
 \begin{equation}
-E(X) = \int_{-\infty}^{\infty} x \, f_X(x)\, dx\
+E[X] = \int_{-\infty}^{\infty} x \, f_X(x)\, dx\
 \end{equation}
 \\]
 
-Variance:
+**Variance**:
 \\[
 \begin{equation}
-Var(X)=E((X-E(X))^2) = E(X^2)-(E(X))^2
+Var(X)=E[(X-E[X])^2] = E[X^2]-(E[X])^2
 \end{equation}
 \\]
 
+**Standardized moment** is the $n$-th central moment divided by $\sigma^n$:
+
+\\[
+\begin{equation}
+\frac{\mu_n}{\sigma^n} = \frac{E[(X - \mu)^n]}{\sigma^n}
+\end{equation}
+\\]
+
+**Skewness (Pearson's moment coefficient of skewness or the third standardized moment)**:
+
+\\[
+\begin{equation}
+\tilde{\mu}_3 = E\left[\frac{X - \mu}{\sigma}\right]^3 = \frac{E[(X - \mu)^3]}{E[(X - \mu)^2]^{3/2}}
+\end{equation}
+\\]
+![skewness_0]({{ site.baseurl }}/assets/img/notes/skewness.png)
+
+**Kurtosis**
+
+\\[
+\begin{equation}
+Kurt[X] = E\left[\frac{X - \mu}{\sigma}\right]^4 = \frac{E[(X - \mu)^4]}{E[(X - \mu)^2]^{2}}
+\end{equation}
+\\]
+
+Kurtosis is a measure of whether the data are heavy-tailed or light-tailed relative to a normal distribution.
+That is, data sets with high kurtosis tend to have heavy tails, or outliers.
+
+The kurtosis for a standard normal distribution is three: $Kurt[X] - 3 = 0$.
 
 <br>
 #### 2. Covariance
@@ -173,5 +205,6 @@ P(|\overline{X_n} - \mu| > \epsilon) \rightarrow 0, \; as \; n \rightarrow \inft
 <br>
 #### Links
 - [https://en.wikipedia.org/wiki/Pearson_correlation_coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
-- [https://datascienceplus.com/]
+- [https://en.wikipedia.org/wiki/Skewness](https://en.wikipedia.org/wiki/Skewness)
+- [Measures of Skewness and Kurtosis](https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm)
 
