@@ -27,7 +27,7 @@ The number of combinations of subsets of size $k$ drawn from a set of size $n$ i
 
 
 <br>
-#### 1. Expectation, variance, skewness
+#### 1. Expectation, variance, skewness, kurtosis
 
 **Expectation**:
 
