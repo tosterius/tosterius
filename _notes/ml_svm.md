@@ -51,7 +51,7 @@ Now we can define an optimization problem to find optimal margin classifier:
 
 \\[
 \begin{split}
-&\frac{1}{2}\Arrowvert \mathbf{w} \Arrowvert \rightarrow \min \\\\\\
+&\frac{1}{2}{\Arrowvert \mathbf{w} \Arrowvert}^ 2 \rightarrow \min \\\\\\
 &subject\;to\; y_i(\mathbf{w}^T \mathbf{x}-b) \geqslant 1, \;i=1\dots m
 \end{split} \tag{2}\label{eq2}
 \\]
