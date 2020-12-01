@@ -101,7 +101,7 @@ The dual problem is thus stated as:
 Solving the last problem we get $\alpha_i$. Now we can calculate $\mathbf{w}=\sum_{i=1}^{m}{\alpha_iy_i\mathbf{x_i}}$ 
 and $b = \frac{1}{S}\sum_{i=1}^S(y_i-\mathbf{w}\cdot \mathbf{x_i})$, where $S$ is the number of support vectors.
 
-The problem with hard-margin SVM is that it does not work with linearly inseparable data.
+The problem with **hard-margin SVM is that it does not work with linearly inseparable data**.
 
 <br>
 ####  Linearly inseparable data (soft-margin)
@@ -116,11 +116,14 @@ introducing slack variables $\psi_i$:
 
 \\[
 \begin{split}
-&\min_{w,b,\psi}\frac{1}{2}\Arrowvert \mathbf{w} \Arrowvert + \sum_{i=1}^{m}\psi_i\\\\\\
+&\min_{w,b,\psi}\frac{1}{2}\Arrowvert \mathbf{w} \Arrowvert + C\sum_{i=1}^{m}\psi_i\\\\\\
 &subject\;to\; y_i(\mathbf{w}^T \mathbf{x}-b) \geqslant 1 - \psi_i, \; \psi_i \ge 0 \;i=1\dots m
 \end{split} \tag{8}\label{eq8}
 \\]
 We add $\psi_i \ge 0$ to prevent the optimization by using negative values.
+
+$C$ is regularization parameter. It controls how mach
+we want to avoid misclassifications. Increasing $C$ contributes to smaller margin. 
 
 Dual problem is defined as
 
