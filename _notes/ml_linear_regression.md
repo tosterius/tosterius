@@ -206,6 +206,18 @@ RSS_{elastic}(\mathbf{w}) = \frac{1}{2}\sum_{n = 1}^{N}(t_n − \mathbf{w}^T \ma
 - MSE
 - MAE
 - Root MSE
+- RMSLE
+\\[
+\begin{equation}
+RMSLE = \sqrt{ \sum_{n = 1}^{N} (\log{(1 + t_n)} - \log{(1 + y_n)})^2}
+\end{equation}
+\\]
+- MSPE
+\\[
+\begin{equation}
+MAPE = \frac{1}{n} \sum_{n = 1}^{N} \left(\frac{t_n - y_n}{t_n}\right)^2
+\end{equation}
+\\]
 - MAPE
 \\[
 \begin{equation}
