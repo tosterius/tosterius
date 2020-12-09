@@ -2,3 +2,4 @@
 /sandbox
 /.sass-cache
 *.ipynb_checkpoints
+Gemfile.lock
