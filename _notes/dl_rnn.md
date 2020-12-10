@@ -29,9 +29,9 @@ sequence.
 
 Where
 - $x^{(t)}$ is the input at time step $t$
-- $h^{(t)}$ is the hidden state at time step $t$
+- $h^{(t)}$ is the hidden state at time step $t$, $f$ is nonlinear function such as $\sigma$ or $tanh$
 - $o^{(t)}$ is the intermediate term. Used to calculate $z^{(t)}$
-- $z^{(t)}$ is the prediction at the time step $t$ 
+- $z^{(t)}$ is the output(prediction) at the time step $t$ produced with function $g$ (e.g. $softmax$) 
 
 <br>
 #### Backpropagation
