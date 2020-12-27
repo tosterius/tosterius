@@ -69,7 +69,8 @@ Now we apply SVD to **PMI Matrix** that gives us vectorized representation of wo
 #### Word embeddings in different languages
 
 - word embeddings for different languages are quite similar
-- $\\{x_i, y_i\\}, \; i=1,..,N$ - is the set of word-translation pairs
+- $\\{x_i, y_i\\}, \; i=1,..,N$ - is the set of word-translation pairs.
+($x_i$ and $y_i$ are word vectors in different languages)
 - learn linear mapping between the source and the target spaces
 \\[
 \begin{equation}
@@ -84,7 +85,15 @@ W^{\ast} = argmin||WX - Y|| = UV^T,\;\text{with}\;U\Sigma V^T = SVD(YX^T)
 \end{equation}
 \\]
 
-The translation $\hat{y} = argmax(\cos(Wx_s, y_x))$. Cosine distance focuses on the angle between vectors.
+The translation is $\hat{y} = argmax(\cos(Wx_s, y_x))$. 
+
+
+Count based methods (BoW, TF_IDF) may lead to large values of norms, therefore metrics like Euclidean distance 
+are not useful is this case. Cosine distance is more appropriate because it focuses on the angle between vectors
+
+The norm of the word vector increases with increasing its occurrence frequency.
+
+Vector norms with no specific context are usually less than words having some meaningful context.
 
 <br>
 ## Links
