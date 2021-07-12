@@ -28,8 +28,8 @@ layout: page
         {% for note in sorted_notes  %}
         <a href="{{ note.url | relative_url }}" class="note-link">
           <div class="item">
-            <p class="title">{{ note.index }}. {{ note.title }}</p>
-            <p class="meta">created: {{ note.cdate }}. &nbsp; updated: {{ note.mdate }}</p>
+            <span class="title">{{ note.index }}. {{ note.title }}</span>
+            <span class="meta">{{ note.cdate }}</span>
           </div>
         </a>
         {% endfor %}
