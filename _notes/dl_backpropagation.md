@@ -9,7 +9,7 @@ headline:
 picture: 
 ---
 
-### Backpropagation
+### Math behind backpropagation
 
 Let us start with a notation which we will use in the explanation.
 
@@ -98,6 +98,47 @@ __Rate of change of the cost function with respect to a bias in network:__
 
 Equations $(\ref{eq3})$, $(\ref{eq6})$, $(\ref{eq7})$, $(\ref{eq8})$ are fundamental equations of backpropagation.
 
+ 
+
+### Backpropagation algorithm
+Let's say we have some network with $n$ layers.
+
+![backpropagation_1]({{ site.baseurl }}/assets/img/notes/backpropagation_1.png)
+
+ For each layer we calculate $a^l$ and $z^l$. Doing backpropagation our goal is to 
+ calculate the derivatives of loss function with respect to parameters $w^l$ going from the end of network
+back to the front.
+
+- So we start at the end and calculate $\delta = \frac{dL}{dz^n}$.
+- Then for each function $f$ in network with input $x_f$ and parameters $\theta_f$ from start to end:
+
+\\[
+\begin{equation}
+\frac{dL}{d\theta_f} = \frac{df}{d\theta_f}\delta
+\end{equation}
+\\]
+
+- then we update $\delta$:
+\\[
+\begin{equation}
+\delta \leftarrow \frac{df}{dx_f}\delta
+\end{equation}
+\\]
+
+Here is an example for shallow 2-layer network.
+![backpropagation_2]({{ site.baseurl }}/assets/img/notes/backpropagation_2.png)
+
+\\[
+\begin{equation}
+\frac{dL}{dW^2} = \frac{dz^2}{dW^2}\frac{dL}{dz^2}
+\end{equation}
+\\]
+
+\\[
+\begin{equation}
+\frac{dL}{dW^1} = \frac{dz^1}{dW^1}\frac{da^1}{dz^1}\frac{dz^2}{da^1}\frac{dL}{dz^2}
+\end{equation}
+\\]
 
 #### Vanishing gradients problem
 
@@ -124,8 +165,7 @@ Let us calculate the gradient $\frac{\partial E}{\partial w^1}$:
 \\]
 
 The maximum of the derivative of the sigmoid function is $0.25$. If the weights $w^i$ are less than $1$ the right
-side of equation will exponentially decrease. 
-
+side of equation will exponentially decrease.
 
 ### Activations
 
