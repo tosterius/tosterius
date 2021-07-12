@@ -64,6 +64,14 @@ pairs in case of instance segmentation and object detection IoU is calculated us
 mAP is AP values averaged over different categories.
 
 
+#### Overfitting and underfitting in terms of Empirical Risk Minimization
+
+- overfitting: when empirical risk is low but the true risk is too high. It can happen if
+the dataset is too small, if model is too powerful.
+
+- underfitting: when empirical risk is high and the true risk is high. This can happen if
+the model is too weak, or for, example if there are some problems with optimization parameters.
+
 <br>
 #### Links
 
