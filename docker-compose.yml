@@ -1,9 +1,9 @@
-version: '0.1'
+# version: '0.1'
 
 services:
   jekyll:
-    image: site-jekyll
-    command: jekyll serve --watch --host 0.0.0.0
+    image: tosterius/jekyll-serve
+    command: bundle exec jekyll serve --watch --host 0.0.0.0
     volumes:
       - .:/site
     ports:
